@@ -131,13 +131,7 @@ export default function Footer() {
                   mahendrabuliders@rediffmail.com
                 </a>
               </div>
-              <a 
-                href="#" 
-                className="inline-flex items-center space-x-2 text-sm bg-primary-600 hover:bg-primary-700 px-4 py-2 rounded-lg transition-colors mt-4"
-              >
-                <Download size={16} />
-                <span>Download Brochure</span>
-              </a>
+            
             </div>
           </div>
         </div>
