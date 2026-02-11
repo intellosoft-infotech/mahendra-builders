@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Facebook, Twitter, Instagram, Linkedin, Youtube, Phone, Mail, MapPin, Download } from 'lucide-react'
-
+import Image from 'next/image'
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
@@ -8,7 +8,7 @@ export default function Footer() {
     { name: 'Our Mission', href: '/our-mission' },
     { name: 'Our Vision', href: '/our-vision' },
     { name: 'Career With Us', href: '/career' },
-    { name: 'Gallery', href: '/gallery' },
+    // { name: 'Gallery', href: '/gallery' },
     { name: 'Contact Us', href: '/contact' }
   ]
 
@@ -16,7 +16,7 @@ export default function Footer() {
     { name: 'Mahendra Ample Park', href: '/projects/mahendra-ample-park' },
     { name: 'Mahendra Green Woods', href: '/projects/mahendra-greenwoods' },
     { name: 'Mahendra Medi Square', href: '/projects/mahendra-medi-square' },
-    { name: 'Mahendra Warehouse', href: '/warehouse' }
+    { name: 'Mahendra Warehouse', href: '/projects/mahendra-warehouse' }
     
   ]
 
@@ -36,16 +36,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center space-x-3 mb-6 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                <span className="text-white font-bold text-xl">MB</span>
+           <Link href="/" className="flex items-center space-x-3 group">
+              <div className="w-16 h-16 bg-white opacity-[1] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
+                <Image src="/logo.png" alt="Mahendra Builders Logo" width={55} height={55} className="object-contain" />
               </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">Mahendra Builders</h3>
-                <p className="text-xs text-gray-400">Since 1990</p>
+              <div className="hidden sm:block">
+                <h1 className="text-xl font-bold text-gray-200 leading-none">
+                  Mahendra Builders
+                </h1>
+                <p className="text-xs mt-[4px] text-gray-300">Building Dreams Since 1990</p>
               </div>
             </Link>
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-gray-300 mb-6 mt-4 leading-relaxed">
               A professionally managed ISO 9001:2008 certified group in real estate business, combining vision, strength, and excellence in every project.
             </p>
             

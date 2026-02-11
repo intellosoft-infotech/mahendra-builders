@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { CheckCircle, Target, Eye, MessageSquare } from 'lucide-react'
+import { CheckCircle, Target, Eye, Users } from 'lucide-react'
 
 export default function About() {
   const highlights = [
@@ -24,10 +24,10 @@ export default function About() {
       link: '/our-vision'
     },
     {
-      icon: MessageSquare,
-      title: 'Director\'s Message',
-      description: 'Our commitment is to build not just structures, but communities where families thrive and businesses flourish with integrity and excellence.',
-      link: '/director-message'
+      icon: Users,
+      title: 'Our Team',
+      description: 'Meet the exceptional professionals behind our success - dedicated individuals committed to excellence and customer satisfaction in every project.',
+      link: '/team'
     }
   ]
 
@@ -40,7 +40,7 @@ export default function About() {
           <div className="relative reveal">
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80"
+                src="/kkk.jpg"
                 alt="Mahendra Builders"
                 fill
                 className="object-cover"
@@ -48,7 +48,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
             {/* Floating Card */}
-            <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-2xl animate-float">
+            {/* <div className="absolute -bottom-28 -right-8 bg-white p-6 rounded-xl shadow-2xl animate-float">
               <div className="flex items-center space-x-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-800 rounded-lg flex items-center justify-center">
                   <span className="text-white text-2xl font-bold">35+</span>
@@ -58,7 +58,7 @@ export default function About() {
                   <p className="text-gray-600">of Excellence</p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Content Side */}

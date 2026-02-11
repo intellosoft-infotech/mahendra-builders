@@ -1,49 +1,44 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { MapPin, Phone, Mail, Home, Maximize, Car, Shield, Droplet, Zap, Check } from 'lucide-react'
+import { MapPin, Phone, Mail, Home, Maximize, Car, Shield, Droplet, Zap, Check, Download } from 'lucide-react'
+import { getProjectBySlug } from '@/data/projects'
+
+const iconMap = {
+  Home,
+  Car,
+  Shield,
+  Droplet,
+  Zap,
+  Maximize,
+  Phone,
+  Mail,
+  MapPin,
+  Check,
+  Download
+}
 
 export default function ProjectDetailPage({ params }) {
-  // This would normally fetch project data based on params.slug
-  const project = {
-    name: 'Mahendra Ample Park',
-    tagline: 'Where Luxury Meets Comfort',
-    type: 'Residential',
-    status: 'Ready to Move',
-    location: 'Salaiya, Ahead of E-8 Extn. Bhopal 462026',
-    phone: '9589011668',
-    email: 'mahendrabuliders@rediffmail.com',
-    description: 'Mahendra Ample Park is a premium residential project that redefines modern living. Strategically located in Salaiya, this development offers the perfect blend of luxury, comfort, and convenience. With world-class amenities and meticulous attention to detail, every aspect is designed to enhance your lifestyle.',
-    images: [
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80',
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80',
-      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80',
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=80'
-    ],
-    configurations: [
-      { type: '2 BHK', size: '1050 sq.ft', price: '₹45 Lakhs onwards' },
-      { type: '3 BHK', size: '1450 sq.ft', price: '₹65 Lakhs onwards' }
-    ],
-    amenities: [
-      { icon: Home, name: 'Clubhouse', description: 'Modern amenities' },
-      { icon: Car, name: 'Parking', description: 'Covered & open' },
-      { icon: Shield, name: '24/7 Security', description: 'CCTV surveillance' },
-      { icon: Droplet, name: 'Water Supply', description: 'Round the clock' },
-      { icon: Zap, name: 'Power Backup', description: '100% coverage' },
-      { icon: Maximize, name: 'Landscape Garden', description: 'Lush greenery' }
-    ],
-    highlights: [
-      'Prime location with excellent connectivity',
-      'Vastu-compliant homes',
-      'Earthquake resistant structure',
-      'Premium quality fittings and fixtures',
-      'Ample parking space',
-      'Children\'s play area',
-      'Jogging track',
-      'Rainwater harvesting',
-      'Solar lighting in common areas',
-      'Wide roads and ample open spaces'
-    ]
+  const project = getProjectBySlug(params.slug)
+
+  if (!project) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Project Not Found</h1>
+          <p className="text-gray-600 mb-6">The project you're looking for doesn't exist.</p>
+          <Link href="/projects" className="btn-primary">
+            Back to Projects
+          </Link>
+        </div>
+      </div>
+    )
   }
+
+  // Map icon names to actual icon components
+  const amenitiesWithIcons = project.amenities.map(amenity => ({
+    ...amenity,
+    icon: iconMap[amenity.icon] || Home
+  }))
 
   return (
     <div className="min-h-screen bg-white">
@@ -109,9 +104,17 @@ export default function ProjectDetailPage({ params }) {
               <a href="#gallery" className="hover:text-primary-200 transition">Gallery</a>
               <a href="#location" className="hover:text-primary-200 transition">Location</a>
             </div>
-            <Link href="#enquiry" className="bg-white text-primary-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
-              Get Details
-            </Link>
+            <div className="flex gap-3">
+              {project.brochure && (
+                <a href={`/brochures/${project.brochure}`} download className="bg-white text-primary-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition flex items-center gap-2">
+                  <Download size={18} />
+                  Download Brochure
+                </a>
+              )}
+              <Link href="#enquiry" className="bg-white text-primary-700 px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+                Get Details
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -132,7 +135,7 @@ export default function ProjectDetailPage({ params }) {
               </p>
               
               {/* Configurations */}
-              <div className="space-y-4">
+              <div className="space-y-4 md:w-1/2">
                 <h3 className="text-2xl font-bold text-gray-900">Configurations</h3>
                 {project.configurations.map((config, idx) => (
                   <div key={idx} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
@@ -141,9 +144,9 @@ export default function ProjectDetailPage({ params }) {
                         <h4 className="text-xl font-bold text-gray-900">{config.type}</h4>
                         <p className="text-gray-600">{config.size}</p>
                       </div>
-                      <div className="text-right">
+                      {/* <div className="text-right">
                         <p className="text-2xl font-bold text-primary-700">{config.price}</p>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 ))}
@@ -177,7 +180,7 @@ export default function ProjectDetailPage({ params }) {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {project.amenities.map((amenity, idx) => (
+            {amenitiesWithIcons.map((amenity, idx) => (
               <div key={idx} className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all card-hover animate-scale-in" style={{ animationDelay: `${idx * 0.1}s` }}>
                 <div className="w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <amenity.icon className="text-white" size={32} />
@@ -220,9 +223,9 @@ export default function ProjectDetailPage({ params }) {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {project.images.map((image, idx) => (
-              <div key={idx} className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group animate-scale-in" style={{ animationDelay: `${idx * 0.1}s` }}>
+              <div key={idx} className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group animate-scale-in" style={{ animationDelay: `${idx * 0.1}s` }}>
                 <Image
                   src={image}
                   alt={`Gallery ${idx + 1}`}

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import ClientImage from '@/components/ClientImage'
 import Link from 'next/link'
 import { MapPin, Phone, Building2, Home, Warehouse, Hotel } from 'lucide-react'
 
@@ -14,6 +15,17 @@ export default function ProjectsPage() {
       slug: 'mahendra-ample-park',
       icon: Home,
       features: ['2/3 BHK', 'Gated Community', 'Premium Amenities']
+    },
+       {
+      name: 'Mahendra Greenwoods',
+      image: 'https://mahendrabuilders.com/wp-content/uploads/2020/12/mgg2.jpg',
+      location: 'Jatkhedi, Bhopal, Madhya Pradesh 462026',
+      phone: '9303356668',
+      type: 'Residential',
+      status: 'Current',
+      slug: 'mahendra-greenwoods',
+      icon: Home,
+      features: ['Eco-Friendly', 'Green Spaces', 'Modern Villas']
     },
     {
       name: 'Mahendra Shipra',
@@ -37,18 +49,7 @@ export default function ProjectsPage() {
       icon: Building2,
       features: ['Office Spaces', 'Retail Units', 'Prime Location']
     },
-    {
-      name: 'Mahendra Medi Square',
-      image: 'https://mahendrabuilders.com/wp-content/uploads/2021/03/medi_plan3.jpg',
-      location: 'Bawadiya Kalan Rd, Kolar Rd, Bhopal, Madhya Pradesh 462010',
-      phone: '7024143668',
-      type: 'Commercial',
-      status: 'Current',
-      slug: 'mahendra-medi-square',
-      icon: Building2,
-      features: ['Medical Centers', 'Commercial Units', 'Modern Infrastructure']
-    },
-    {
+     {
       name: 'Mahendra Ample Business Park',
       image: 'https://mahendrabuilders.com/wp-content/uploads/2021/03/ma_about3.jpg',
       location: 'In front of Mahendra Ample Park, E-8 Extn., Salaiya, Bhopal 462026',
@@ -60,38 +61,19 @@ export default function ProjectsPage() {
       features: ['Business Offices', 'Conference Facilities', 'Ample Parking']
     },
     {
-      name: 'Mahendra Greenwoods',
-      image: 'https://mahendrabuilders.com/wp-content/uploads/2020/12/mgg2.jpg',
-      location: 'Jatkhedi, Bhopal, Madhya Pradesh 462026',
-      phone: '9303356668',
-      type: 'Residential',
+      name: 'Mahendra Medi Square',
+      image: 'https://mahendrabuilders.com/wp-content/uploads/2021/03/medi_plan3.jpg',
+      location: 'Bawadiya Kalan Rd, Kolar Rd, Bhopal, Madhya Pradesh 462010',
+      phone: '7024143668',
+      type: 'Commercial',
       status: 'Current',
-      slug: 'mahendra-greenwoods',
-      icon: Home,
-      features: ['Eco-Friendly', 'Green Spaces', 'Modern Villas']
+      slug: 'mahendra-medi-square',
+      icon: Building2,
+      features: ['Medical Centers', 'Commercial Units', 'Modern Infrastructure']
     },
-    {
-      name: 'Mahendra Utsav',
-      image: 'https://mahendrabuilders.com/wp-content/uploads/2021/03/post_plan.jpg',
-      location: 'Bawadiya Kalan, Gulmohar Colony, Bhopal, Madhya Pradesh 462039',
-      phone: '8435000627',
-      type: 'Hospitality',
-      status: 'Current',
-      slug: 'mahendra-utsav',
-      icon: Hotel,
-      features: ['Marriage Garden', 'Banquet Halls', 'Premium Services']
-    },
-    {
-      name: 'Mahendra Warehouse',
-      image: 'https://mahendrabuilders.com/wp-content/uploads/2021/03/galler3.jpg',
-      location: 'Village Dobra, 2 KM From Mubarakpur Square, Near Raja Bhoj Airport, Bhopal 462030',
-      phone: '07554278331',
-      type: 'Warehouse',
-      status: 'Current',
-      slug: 'mahendra-warehouse',
-      icon: Warehouse,
-      features: ['Logistics Hub', 'Modern Facilities', 'Strategic Location']
-    }
+   
+ 
+  
   ]
 
   const categories = [
@@ -127,23 +109,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="bg-white shadow-lg -mt-12 relative z-10">
-        <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 py-8">
-            {categories.map((category, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-700 mb-1">
-                  {category.count}
-                </div>
-                <div className="text-sm md:text-base text-gray-600 font-medium">
-                  {category.name}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Projects Grid */}
       <section className="section-padding gradient-bg">
@@ -156,14 +122,11 @@ export default function ProjectsPage() {
               >
                 {/* Image */}
                 <div className="relative h-64 overflow-hidden bg-gradient-to-br from-primary-100 to-blue-100">
-                  <Image
+                  <ClientImage
                     src={project.image}
                     alt={project.name}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    onError={(e) => {
-                      e.target.style.display = 'none'
-                    }}
                   />
                   {/* Fallback icon */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-20">

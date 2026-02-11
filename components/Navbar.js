@@ -25,21 +25,24 @@ export default function Navbar() {
       dropdown: [
         { name: 'Our Mission', href: '/our-mission' },
         { name: 'Our Vision', href: '/our-vision' },
-        { name: 'Director Message', href: '/director-message' },
+        { name: 'Our Team', href: '/team' },
       ]
     },
+    { name: 'Our Projects', href: '/projects' },
     { 
-      name: 'Our Group', 
+      name: 'Our Ventures', 
       href: '#',
       dropdown: [
-        { name: 'Current Projects', href: '/projects/current' },
-        { name: 'Previous Projects', href: '/projects/previous' },
-        { name: 'Petrol Pump', href: '/petrol-pump' },
-        { name: 'Warehouse', href: '/warehouse' },
-        { name: 'Marriage Garden', href: '/marriage-garden' },
+        { name: 'Mahendra Fuel Point', href: '/ventures/mahendra-fuel-point' },
+        { name: 'Mahendra Warehouse', href: '/ventures/mahendra-warehouse' },
+        { name: 'Mahendra Agro Services', href: '/ventures/mahendra-agro-services' },
+        { name: 'Tridev Logistics and Warehousing Park', href: '/ventures/tridev-logistics-warehousing' },
+        { name: 'Hotel Tulip Inn', href: '/ventures/hotel-tulip-inn' },
+        { name: 'Kasturi Hospitality', href: '/ventures/kasturi-hospitality' },
+        { name: 'Intellosoft Infotech Private Limited', href: '/ventures/intellosoft-infotech' },
       ]
     },
-    { name: 'Gallery', href: '/gallery' },
+    // { name: 'Gallery', href: '/gallery' },
     { name: 'Career', href: '/career' },
     { name: 'Contact', href: '/contact' },
   ]
@@ -47,7 +50,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-gradient-to-r from-primary-700 to-primary-600 text-white py-2 hidden md:block">
+      {/* <div className="bg-gradient-to-r from-primary-700 to-primary-600 text-white py-2 hidden md:block">
         <div className="container-custom">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center space-x-6">
@@ -65,15 +68,15 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Navbar */}
       <nav className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white shadow-lg py-3' 
-          : 'bg-white/95 backdrop-blur-sm py-4'
+          ? 'bg-white shadow-lg py-4' 
+          : 'bg-white/95 backdrop-blur-sm py-5'
       }`}>
-        <div className="container-custom">
+        <div className="container-custom ">
           <div className="flex justify-between items-center">
             {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">

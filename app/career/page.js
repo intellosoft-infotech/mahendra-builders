@@ -64,14 +64,7 @@ export default function CareerPage() {
       experience: '3-5 years',
       description: 'Lead construction projects and ensure quality standards are met'
     },
-    {
-      title: 'Architect',
-      department: 'Design',
-      location: 'Bhopal',
-      type: 'Full Time',
-      experience: '2-4 years',
-      description: 'Create innovative designs for residential and commercial projects'
-    },
+   
     {
       title: 'Sales Executive',
       department: 'Sales & Marketing',

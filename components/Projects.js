@@ -13,6 +13,15 @@ export default function Projects() {
       status: 'Current',
       slug: 'mahendra-ample-park'
     },
+     {
+      name: 'Mahendra Greenwoods',
+      image: 'https://mahendrabuilders.com/wp-content/uploads/2020/12/mgg2.jpg',
+      location: 'Jatkhedi, Bhopal, Madhya Pradesh 462026',
+      phone: '9303356668',
+      type: 'Residential',
+      status: 'Current',
+      slug: 'mahendra-greenwoods'
+    },
     {
       name: 'Mahendra Shipra',
       image: 'https://mahendrabuilders.com/wp-content/uploads/2021/03/shipra_plan1.jpg',
@@ -49,15 +58,7 @@ export default function Projects() {
       status: 'Current',
       slug: 'mahendra-ample-business-park'
     },
-    {
-      name: 'Mahendra Greenwoods',
-      image: 'https://mahendrabuilders.com/wp-content/uploads/2020/12/mgg2.jpg',
-      location: 'Jatkhedi, Bhopal, Madhya Pradesh 462026',
-      phone: '9303356668',
-      type: 'Residential',
-      status: 'Current',
-      slug: 'mahendra-greenwoods'
-    },
+   
     {
       name: 'Mahendra Utsav',
       image: 'https://mahendrabuilders.com/wp-content/uploads/2021/03/post_plan.jpg',
