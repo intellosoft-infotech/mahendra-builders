@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { MessageSquare, Quote, Heart, Handshake, Target, Users } from 'lucide-react'
+import { MessageSquare, Quote, Heart, Shield, Target, Users } from 'lucide-react'
 
 export default function DirectorMessagePage() {
   const values = [
@@ -9,7 +9,7 @@ export default function DirectorMessagePage() {
       description: 'We are passionate about creating spaces that enrich lives'
     },
     {
-      icon: Handshake,
+      icon: Shield,
       title: 'Integrity',
       description: 'Our word is our bond; we deliver on every promise'
     },
