@@ -99,7 +99,7 @@ export default function TeamPage() {
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover"
+                  className={member.id === 7 ? "object-cover object-top" : "object-cover object-center"}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 
