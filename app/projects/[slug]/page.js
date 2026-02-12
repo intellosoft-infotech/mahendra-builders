@@ -228,6 +228,154 @@ export default function ProjectDetailPage({ params }) {
         </div>
       </section>
 
+      {/* Location Section */}
+      <section id="location" className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="mb-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-3">Send Us a Message</h2>
+                <p className="text-gray-600">Fill out the form below and we'll get back to you shortly.</p>
+              </div>
+
+              <form className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Phone *
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"
+                      placeholder="+91 98765 43210"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Subject *
+                  </label>
+                  <select
+                    id="subject"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"
+                  >
+                    <option value="">Select a subject</option>
+                    <option value="inquiry">General Inquiry</option>
+                    <option value="property">Property Information</option>
+                    <option value="visit">Schedule Visit</option>
+                    <option value="investment">Investment Opportunity</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    required
+                    rows="5"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition resize-none"
+                    placeholder="Tell us about your requirements..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full btn-primary flex items-center justify-center space-x-2"
+                >
+                  <span>Send Message</span>
+                </button>
+              </form>
+            </div>
+
+            {/* Project Info & Map */}
+            <div className="space-y-6">
+              {/* Project Card */}
+              <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl p-8 text-white">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                    <MapPin size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">{project.name}</h3>
+                    <p className="text-primary-100 text-sm">{project.type}</p>
+                  </div>
+                </div>
+                <p className="text-white/90 mb-6 leading-relaxed">
+                  Visit our project site to explore this {project.type.toLowerCase()} development. Our team of experts is ready to assist you with all your inquiries.
+                </p>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-white/80 text-sm mb-1">Address</p>
+                    <p className="text-white font-semibold">{project.location}</p>
+                  </div>
+                  <div>
+                    <p className="text-white/80 text-sm mb-1">Phone</p>
+                    <a href={`tel:${project.phone}`} className="text-white font-semibold hover:text-primary-100 transition">
+                      {project.phone}
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-white/80 text-sm mb-1">Status</p>
+                    <p className="text-white font-semibold">{project.status}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Map */}
+              <div className="bg-gray-200 rounded-2xl h-80 overflow-hidden">
+                <iframe
+                  src={
+                    project.latitude && project.longitude
+                      ? `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.${Math.floor(Math.random() * 1000000)}!2d${project.longitude}!3d${project.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s!2z${encodeURIComponent(project.location)}!5e0!3m2!1sen!2sin!4v${Date.now()}`
+                      : `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.${Math.floor(Math.random() * 1000000)}!2d77.463!3d23.259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s!2z${encodeURIComponent(project.location + ', Bhopal')}!5e0!3m2!1sen!2sin!4v${Date.now()}`
+                  }
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Form */}
       <section id="enquiry" className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-700 to-primary-900"></div>
@@ -269,7 +417,7 @@ export default function ProjectDetailPage({ params }) {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition resize-none"
               ></textarea>
               <button type="submit" className="w-full btn-primary text-lg py-4">
-                Submit Enquiry
+                Send Enquiry
               </button>
             </form>
           </div>
