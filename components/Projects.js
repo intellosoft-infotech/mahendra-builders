@@ -59,24 +59,7 @@ export default function Projects() {
       slug: 'mahendra-ample-business-park'
     },
    
-    {
-      name: 'Mahendra Utsav',
-      image: 'https://mahendrabuilders.com/wp-content/uploads/2021/03/post_plan.jpg',
-      location: 'Bawadiya Kalan, Gulmohar Colony, Bhopal, Madhya Pradesh 462039',
-      phone: '8435000627',
-      type: 'Hospitality',
-      status: 'Current',
-      slug: 'mahendra-utsav'
-    },
-    {
-      name: 'Mahendra Warehouse',
-      image: 'https://mahendrabuilders.com/wp-content/uploads/2021/03/galler3.jpg',
-      location: 'Village Dobra, 2 KM From Mubarakpur Square, Near Raja Bhoj Airport, Bhopal 462030',
-      phone: '07554278331',
-      type: 'Warehouse',
-      status: 'Current',
-      slug: 'mahendra-warehouse'
-    }
+    
   ]
 
   return (

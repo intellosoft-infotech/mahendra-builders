@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#0066CC"/>
+  
+  <!-- Mahendra Logo Triangle Design -->
+  <path d="M 60 140 L 100 50 L 140 140 Z" fill="#FF4444" stroke="#FFFFFF" stroke-width="2"/>
+  
+  <!-- Building element -->
+  <rect x="75" y="90" width="20" height="50" fill="#FFFFFF" opacity="0.9"/>
+  <rect x="105" y="100" width="20" height="40" fill="#FFFFFF" opacity="0.9"/>
+</svg>

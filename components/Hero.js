@@ -98,9 +98,9 @@ export default function Hero() {
   ]
 
   return (
-    <section className="relative h-screen min-h-[600px] overflow-hidden">
+    <section className="relative min-h-screen h-auto sm:h-screen overflow-hidden">
       {/* Carousel */}
-      <div className="relative h-full">
+      <div className="relative w-full min-h-[500px] sm:h-full">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -127,18 +127,18 @@ export default function Hero() {
             {/* Content */}
             <div className="relative h-full flex items-center">
               <div className="container-custom">
-                <div className="max-w-3xl">
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-slide-up opacity-0" style={{ animation: 'slideUp 1s ease-out forwards', animationDelay: '0.2s' }}>
+                <div className="max-w-3xl px-4 sm:px-6">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 animate-slide-up opacity-0" style={{ animation: 'slideUp 1s ease-out forwards', animationDelay: '0.2s' }}>
                     {slide.title}
                   </h1>
-                  <p className="text-xl md:text-2xl text-white/90 mb-8 animate-slide-up opacity-0" style={{ animation: 'slideUp 1s ease-out forwards', animationDelay: '0.4s' }}>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/90 mb-6 sm:mb-8 animate-slide-up opacity-0" style={{ animation: 'slideUp 1s ease-out forwards', animationDelay: '0.4s' }}>
                     {slide.subtitle}
                   </p>
-                  <div className="flex flex-wrap gap-4 animate-slide-up opacity-0" style={{ animation: 'slideUp 1s ease-out forwards', animationDelay: '0.6s' }}>
-                    <Link href={slide.link} className="btn-primary text-lg px-8 py-4">
+                  <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 animate-slide-up opacity-0" style={{ animation: 'slideUp 1s ease-out forwards', animationDelay: '0.6s' }}>
+                    <Link href={slide.link} className="btn-primary text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 text-center">
                       {slide.cta}
                     </Link>
-                    <Link href="/contact" className="bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-semibold border-2 border-white/30 hover:bg-white/20 transition-all duration-300 hover:scale-105 active:scale-95">
+                    <Link href="/contact" className="bg-white/10 backdrop-blur-sm text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold border-2 border-white/30 hover:bg-white/20 transition-all duration-300 hover:scale-105 active:scale-95 text-center text-sm sm:text-base lg:text-lg">
                       Contact Us
                     </Link>
                   </div>
@@ -151,25 +151,25 @@ export default function Hero() {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-3 rounded-full hover:bg-white/20 transition-all group"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/20 transition-all group z-10"
         >
-          <ChevronLeft className="text-white group-hover:scale-110 transition-transform" size={28} />
+          <ChevronLeft className="text-white group-hover:scale-110 transition-transform" size={20} sm={{ size: 28 }} />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-3 rounded-full hover:bg-white/20 transition-all group"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/20 transition-all group z-10"
         >
-          <ChevronRight className="text-white group-hover:scale-110 transition-transform" size={28} />
+          <ChevronRight className="text-white group-hover:scale-110 transition-transform" size={20} sm={{ size: 28 }} />
         </button>
 
         {/* Slide Indicators */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3">
+        <div className="absolute bottom-24 sm:bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 sm:space-x-3 z-10">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'w-8 bg-white' : 'w-2 bg-white/50'
+              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
+                index === currentSlide ? 'w-6 sm:w-8 bg-white' : 'w-1.5 sm:w-2 bg-white/50'
               }`}
             />
           ))}
@@ -177,20 +177,20 @@ export default function Hero() {
       </div>
 
       {/* Stats Bar */}
-      <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-2xl">
+      <div className="relative w-full bg-white/95 backdrop-blur-sm shadow-2xl">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 py-6 sm:py-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="flex justify-center mb-3">
-                  <div className="p-3 bg-primary-50 rounded-lg group-hover:bg-primary-100 transition-colors">
-                    <stat.icon className="text-primary-600" size={28} />
+                <div className="flex justify-center mb-2 sm:mb-3">
+                  <div className="p-2 sm:p-3 bg-primary-50 rounded-lg group-hover:bg-primary-100 transition-colors">
+                    <stat.icon className="text-primary-600" size={20} sm={{ size: 28 }} />
                   </div>
                 </div>
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1">
                   {stat.value}
                 </div>
-                <div className="text-sm md:text-base text-gray-600 font-medium">
+                <div className="text-xs sm:text-sm md:text-base text-gray-600 font-medium">
                   {stat.label}
                 </div>
               </div>

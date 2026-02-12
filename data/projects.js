@@ -164,6 +164,48 @@ export const projectsData = {
     ]
   },
 
+   'mahendra-ample-business-park': {
+    name: 'Mahendra Ample Business Park',
+    tagline: 'Premium Commercial Destination',
+    type: 'Commercial',
+    status: 'Current',
+    location: 'In front of Mahendra Ample Park, E-8 Extn., Salaiya, Bhopal 462026',
+    phone: '+91 9589011668',
+    email: 'mahendrabuliders@rediffmail.com',
+    description: 'Mahendra Ample Business Park is a world-class professional office building designed for businesses seeking premium commercial space. Located in front of Mahendra Ample Park, it offers an impressive setting that reflects your attention to detail in business. Perfect for corporates, MNCs, and professional enterprises.',
+    images: [
+      'https://mahendrabuilder.com/wp-content/uploads/2021/03/ma_about3.jpg',
+      'https://mahendrabuilder.com/wp-content/uploads/2021/03/gallery4.jpg',
+      'https://mahendrabuilder.com/wp-content/uploads/2021/03/gallery7.jpg',
+      'https://mahendrabuilder.com/wp-content/uploads/2021/03/layout_plan-2.jpg'
+    ],
+    configurations: [
+      { type: 'Office Space', size: '1000-3000 sq.ft', price: 'Call for pricing' },
+      { type: 'Executive Suite', size: '500-1500 sq.ft', price: 'Call for pricing' }
+    ],
+    amenities: [
+      { icon: 'Car', name: 'Premium Parking', description: 'Covered & secure' },
+      { icon: 'Home', name: 'Business Center', description: 'Fully equipped' },
+      { icon: 'Zap', name: 'Power Backup', description: '100% coverage' },
+      { icon: 'Shield', name: 'Security', description: 'Advanced systems' },
+      { icon: 'Maximize', name: 'Modern Layout', description: 'Flexible spaces' },
+      { icon: 'Droplet', name: 'Water Supply', description: 'Round the clock' }
+    ],
+    highlights: [
+      'World-class professional office building',
+      'Premium location in Salaiya area',
+      'State-of-the-art infrastructure',
+      'Ample parking facilities',
+      'Modern business center',
+      '24/7 power backup',
+      'Advanced security systems',
+      'Flexible office layouts',
+      'Perfect for corporates and MNCs',
+      'Excellent accessibility and connectivity'
+    ],
+    brochure: 'Mahendra-Ample-Business-Park.pdf'
+  },
+
   'mahendra-medi-square': {
     name: 'Mahendra Medi Square',
     tagline: 'Healthcare & Retail Excellence',
@@ -207,129 +249,9 @@ export const projectsData = {
 
  
 
-  'mahendra-ample-business-park': {
-    name: 'Mahendra Ample Business Park',
-    tagline: 'Premium Commercial Destination',
-    type: 'Commercial',
-    status: 'Current',
-    location: 'In front of Mahendra Ample Park, E-8 Extn., Salaiya, Bhopal 462026',
-    phone: '+91 9589011668',
-    email: 'mahendrabuliders@rediffmail.com',
-    description: 'Mahendra Ample Business Park is a world-class professional office building designed for businesses seeking premium commercial space. Located in front of Mahendra Ample Park, it offers an impressive setting that reflects your attention to detail in business. Perfect for corporates, MNCs, and professional enterprises.',
-    images: [
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/ma_about3.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/gallery4.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/gallery7.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/layout_plan-2.jpg'
-    ],
-    configurations: [
-      { type: 'Office Space', size: '1000-3000 sq.ft', price: 'Call for pricing' },
-      { type: 'Executive Suite', size: '500-1500 sq.ft', price: 'Call for pricing' }
-    ],
-    amenities: [
-      { icon: 'Car', name: 'Premium Parking', description: 'Covered & secure' },
-      { icon: 'Home', name: 'Business Center', description: 'Fully equipped' },
-      { icon: 'Zap', name: 'Power Backup', description: '100% coverage' },
-      { icon: 'Shield', name: 'Security', description: 'Advanced systems' },
-      { icon: 'Maximize', name: 'Modern Layout', description: 'Flexible spaces' },
-      { icon: 'Droplet', name: 'Water Supply', description: 'Round the clock' }
-    ],
-    highlights: [
-      'World-class professional office building',
-      'Premium location in Salaiya area',
-      'State-of-the-art infrastructure',
-      'Ample parking facilities',
-      'Modern business center',
-      '24/7 power backup',
-      'Advanced security systems',
-      'Flexible office layouts',
-      'Perfect for corporates and MNCs',
-      'Excellent accessibility and connectivity'
-    ],
-    brochure: 'Mahendra-Ample-Business-Park.pdf'
-  },
+ 
 
-  'mahendra-warehouse': {
-    name: 'Mahendra Warehouse',
-    tagline: 'Logistics Excellence',
-    type: 'Warehouse',
-    status: 'Current',
-    location: 'Village Dobra, 2 KM From Mubarakpur Square, Near Raja Bhoj Airport, Bhopal 462030',
-    phone: '+91 7554278331',
-    email: 'mahendrabuliders@rediffmail.com',
-    description: 'Mahendra Warehouse provides premier warehousing and logistics solutions. Located strategically near Raja Bhoj Airport and major transport routes, it offers excellent accessibility for businesses requiring secure and spacious storage facilities. Ideal for e-commerce, manufacturing, and logistics companies.',
-    images: [
-      '/IMG_3068.jpg',
-      '/IMG_3069.jpg',
-      '/IMG_3070.jpg',
-      '/IMG_3071.jpg'
-    ],
-    configurations: [
-      { type: 'Warehouse Space', size: '5000-50000 sq.ft', price: 'Call for pricing' },
-      { type: 'Logistics Hub', size: '10000-100000 sq.ft', price: 'Call for pricing' }
-    ],
-    amenities: [
-      { icon: 'Car', name: 'Easy Access', description: 'Good road connectivity' },
-      { icon: 'Shield', name: 'Security', description: '24/7 surveillance' },
-      { icon: 'Zap', name: 'Power Supply', description: 'Reliable electricity' },
-      { icon: 'Droplet', name: 'Water Supply', description: 'Round the clock' },
-      { icon: 'Maximize', name: 'Spacious', description: 'Large warehouse area' },
-      { icon: 'Home', name: 'Office Space', description: 'Administrative area' }
-    ],
-    highlights: [
-      'Strategic location near Raja Bhoj Airport',
-      'Close to Mubarakpur Square',
-      'Easy access via bypass road',
-      'High-security warehouse facility',
-      '24/7 surveillance system',
-      'Reliable power supply',
-      'Round the clock water supply',
-      'Spacious warehouse area',
-      'Administrative office space',
-      'Perfect for logistics and e-commerce businesses'
-    ]
-  },
-
-  'mahendra-utsav': {
-    name: 'Mahendra Utsav',
-    tagline: 'Hospitality Excellence',
-    type: 'Hospitality',
-    status: 'Current',
-    location: 'Bawadiya Kalan, Gulmohar Colony, Bhopal, Madhya Pradesh 462039',
-    phone: '+91 8435000627',
-    email: 'mahendrabuliders@rediffmail.com',
-    description: 'Mahendra Utsav is a premium hospitality venture designed to provide world-class accommodation and event management services. Located in the vibrant Gulmohar Colony area, it serves as the perfect venue for celebrations and corporate events.',
-    images: [
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/post_plan.jpg',
-      'https://images.unsplash.com/photo-1519167758481-83f19106ae4f?w=1920&q=80',
-      'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=80',
-      'https://images.unsplash.com/photo-1462883334153-bc1e0e9bd00b?w=1920&q=80'
-    ],
-    configurations: [
-      { type: 'Banquet Hall', size: '5000-10000 sq.ft', price: 'Call for pricing' },
-      { type: 'Rooms', size: 'Various sizes', price: 'Affordable rates' }
-    ],
-    amenities: [
-      { icon: 'Home', name: 'Banquet Hall', description: 'Multi-purpose venue' },
-      { icon: 'Maximize', name: 'Spacious Rooms', description: 'Comfortable stay' },
-      { icon: 'Zap', name: 'Modern Facilities', description: 'Latest equipment' },
-      { icon: 'Shield', name: 'Security', description: '24/7 services' },
-      { icon: 'Car', name: 'Parking', description: 'Ample space' },
-      { icon: 'Droplet', name: 'Catering', description: 'Premium service' }
-    ],
-    highlights: [
-      'Premium hospitality venue',
-      'Multi-purpose banquet hall',
-      'Comfortable guest rooms',
-      'Professional event management',
-      'Modern kitchen facilities',
-      'Expert catering services',
-      'Ample parking space',
-      '24/7 security services',
-      'Flexible event packages',
-      'Perfect for weddings, conferences, and celebrations'
-    ]
-  }
+  
 }
 
 export const getAllProjectSlugs = () => {

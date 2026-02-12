@@ -43,7 +43,7 @@ export default function About() {
                 src="/kkk.jpg"
                 alt="Mahendra Builders"
                 fill
-                className="object-cover"
+                className="md:object-cover object-[inherit]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
             </div>
