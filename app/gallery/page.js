@@ -19,56 +19,56 @@ export default function GalleryPage() {
   const galleryImages = [
     {
       id: 1,
-      src: 'https://mahendrabuilder.com/wp-content/uploads/2021/04/ample-park.jpg',
+      src: 'https://mahendrabuilders.com/wp-content/uploads/2021/04/ample-park.jpg',
       title: 'Mahendra Ample Park',
       category: 'residential',
       description: 'Premium residential development in Salaiya'
     },
     {
       id: 2,
-      src: 'https://mahendrabuilder.com/wp-content/uploads/2021/04/bussiness-square.jpg',
+      src: 'https://mahendrabuilders.com/wp-content/uploads/2021/04/bussiness-square.jpg',
       title: 'Business Square',
       category: 'commercial',
       description: 'Modern commercial complex'
     },
     {
       id: 3,
-      src: 'https://mahendrabuilder.com/wp-content/uploads/2021/04/ample-bussiness-park.jpg',
+      src: 'https://mahendrabuilders.com/wp-content/uploads/2021/04/ample-bussiness-park.jpg',
       title: 'Ample Business Park',
       category: 'commercial',
       description: 'State-of-the-art business park'
     },
     {
       id: 4,
-      src: 'https://mahendrabuilder.com/wp-content/uploads/2021/04/WARE-HOUSE.jpg',
+      src: 'https://mahendrabuilders.com/wp-content/uploads/2021/04/WARE-HOUSE.jpg',
       title: 'Mahendra Warehouse',
       category: 'warehouse',
       description: 'Strategic logistics solution'
     },
     {
       id: 5,
-      src: 'https://mahendrabuilder.com/wp-content/uploads/2021/04/UTSAV.jpg',
+      src: 'https://mahendrabuilders.com/wp-content/uploads/2021/04/UTSAV.jpg',
       title: 'Mahendra Utsav',
       category: 'events',
       description: 'Premium hospitality venue'
     },
     {
       id: 6,
-      src: 'https://mahendrabuilder.com/wp-content/uploads/2021/04/sipra-project.jpg',
+      src: 'https://mahendrabuilders.com/wp-content/uploads/2021/04/sipra-project.jpg',
       title: 'Mahendra Shipra',
       category: 'residential',
       description: 'Modern township development'
     },
     {
       id: 7,
-      src: 'https://mahendrabuilder.com/wp-content/uploads/2021/04/medi-square.jpg',
+      src: 'https://mahendrabuilders.com/wp-content/uploads/2021/04/medi-square.jpg',
       title: 'Medi Square',
       category: 'commercial',
       description: 'Healthcare & commercial hub'
     },
     {
       id: 8,
-      src: 'https://mahendrabuilder.com/wp-content/uploads/2021/04/green-wood.jpg',
+      src: 'https://mahendrabuilders.com/wp-content/uploads/2021/04/green-wood.jpg',
       title: 'Mahendra Greenwoods',
       category: 'residential',
       description: 'Eco-friendly living spaces'

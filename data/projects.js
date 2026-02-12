@@ -11,7 +11,7 @@ export const projectsData = {
     email: 'mahendrabuliders@rediffmail.com',
     description: 'Mahendra Ample Park is a premium residential project that redefines modern living. Strategically located in Salaiya, this development offers the perfect blend of luxury, comfort, and convenience. With world-class amenities and meticulous attention to detail, every aspect is designed to enhance your lifestyle.',
     images: [
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/main_page.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/main_page.jpg',
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80',
       'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80',
       'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1920&q=80'
@@ -53,10 +53,10 @@ export const projectsData = {
     email: 'mahendrabuliders@rediffmail.com',
     description: 'Mahendra Greenwoods Extension is a state-of-the-art residential development on prime Hoshangabad Road. Following the success of Mahendra Township Phase-I & II and Mahendra City, this project offers a unique lifestyle concept with pollution-free atmosphere and lush greenery. It\'s a perfect blend of nature and modern living.',
     images: [
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/mgg2.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/gallery.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/mgg3.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/sdfjpg.jpg'
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/mgg2.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/gallery.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/mgg3.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/sdfjpg.jpg'
     ],
     configurations: [
       { type: '2 BHK', size: '1000 sq.ft', price: '₹42 Lakhs onwards' },
@@ -97,10 +97,10 @@ export const projectsData = {
     email: 'mahendrabuliders@rediffmail.com',
     description: 'Mahendra Shipra is an exquisite residential development located in Mahendra Township Phase-1. Designed with meticulous attention to detail, this project offers spacious layouts with modern amenities. The project is developed with Vastu principles and provides a perfect blend of suburban peace and urban connectivity.',
     images: [
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/shipra_plan1.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/msf1.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/msf2.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/shipra_plan3.jpg'
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/shipra_plan1.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/msf1.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/msf2.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/shipra_plan3.jpg'
     ],
     configurations: [
       { type: '2 BHK', size: '950 sq.ft', price: '₹40 Lakhs onwards' },
@@ -141,10 +141,10 @@ export const projectsData = {
     email: 'mahendrabuliders@rediffmail.com',
     description: 'Mahendra Business Square is a state-of-the-art commercial development offering premium office and retail spaces. Located on the prime 200 Ft. Kolar Road with excellent connectivity, it\'s the ideal destination for businesses looking for professional premises that make an impression.',
     images: [
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/plan3-2.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/mbs_bg.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/plan1-1.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/post.jpg'
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/plan3-2.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/mbs_bg.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/plan1-1.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/post.jpg'
     ],
     configurations: [
       { type: 'Office Space', size: '500-2000 sq.ft', price: 'Call for pricing' },
@@ -184,10 +184,10 @@ export const projectsData = {
     email: 'mahendrabuliders@rediffmail.com',
     description: 'Mahendra Ample Business Park is a world-class professional office building designed for businesses seeking premium commercial space. Located in front of Mahendra Ample Park, it offers an impressive setting that reflects your attention to detail in business. Perfect for corporates, MNCs, and professional enterprises.',
     images: [
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/ma_about3.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/gallery4.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/gallery7.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/layout_plan-2.jpg'
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/ma_about3.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/gallery4.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/gallery7.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/layout_plan-2.jpg'
     ],
     configurations: [
       { type: 'Office Space', size: '1000-3000 sq.ft', price: 'Call for pricing' },
@@ -228,10 +228,10 @@ export const projectsData = {
     email: 'mahendrabuliders@rediffmail.com',
     description: 'Mahendra Medi Square is a specialized commercial development designed for healthcare and retail businesses. With prime location and modern infrastructure, it serves as the perfect hub for medical professionals and retail entrepreneurs seeking premium commercial space.',
     images: [
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/medi_plan3.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/post.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/mbs_bg.jpg',
-      'https://mahendrabuilder.com/wp-content/uploads/2021/03/plan1-1.jpg'
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/medi_plan3.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/post.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/mbs_bg.jpg',
+      'https://mahendrabuilders.com/wp-content/uploads/2021/03/plan1-1.jpg'
     ],
     configurations: [
       { type: 'Medical Office', size: '400-1500 sq.ft', price: 'Call for pricing' },
