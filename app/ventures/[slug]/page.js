@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MapPin, Phone, Mail, Home, Zap, Shield, Droplet, Check, Download, ArrowLeft } from 'lucide-react'
 import { getVentureBySlug } from '@/data/ventures'
+import Lightbox from '@/components/Lightbox'
 
 export default function VentureDetailPage({ params }) {
   const venture = getVentureBySlug(params.slug)
@@ -175,18 +176,7 @@ export default function VentureDetailPage({ params }) {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {venture.images.map((image, idx) => (
-              <div key={idx} className="relative aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group animate-scale-in" style={{ animationDelay: `${idx * 0.1}s` }}>
-                <Image
-                  src={image}
-                  alt={`Gallery ${idx + 1}`}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-            ))}
-          </div>
+          <Lightbox images={venture.images} />
         </div>
       </section>
 

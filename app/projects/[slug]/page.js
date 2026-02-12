@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MapPin, Phone, Mail, Home, Maximize, Car, Shield, Droplet, Zap, Check, Download } from 'lucide-react'
 import { getProjectBySlug } from '@/data/projects'
+import Lightbox from '@/components/Lightbox'
 
 const iconMap = {
   Home,
@@ -223,18 +224,7 @@ export default function ProjectDetailPage({ params }) {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {project.images.map((image, idx) => (
-              <div key={idx} className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition group animate-scale-in" style={{ animationDelay: `${idx * 0.1}s` }}>
-                <Image
-                  src={image}
-                  alt={`Gallery ${idx + 1}`}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-              </div>
-            ))}
-          </div>
+          <Lightbox images={project.images} />
         </div>
       </section>
 

@@ -9,10 +9,10 @@ export const venturesData = {
     email: 'mahendrabuliders@rediffmail.com',
     description: 'We are a premium fuel destination designed for performance, convenience, and trust. Offering high-quality Petrol, Diesel, and Speed Petrol, we ensure superior efficiency and care for your vehicle. Our facility is equipped with advanced EV charging, complimentary nitrogen air, and air services, delivering a seamless and modern refueling experience. With a strong commitment to quality, safety, and customer satisfaction, we set a higher standard for everyday mobility.',
     images: [
-      'https://images.unsplash.com/photo-1594958066966-b48db0af37f1?w=1920&q=80',
-      'https://images.unsplash.com/photo-1632570584179-edd8eb2b8eca?w=1920&q=80',
-      'https://images.unsplash.com/photo-1494515764767-fba880eaaac5?w=1920&q=80',
-      'https://images.unsplash.com/photo-1594958066966-b48db0af37f1?w=1920&q=80'
+      '/p1.jpeg',
+      '/p2.jpeg',
+      '/p3.jpeg',
+      '/p4.jpeg'
     ],
     features: [
       'High-Quality Petrol',
@@ -149,10 +149,16 @@ export const venturesData = {
     email: 'mahendrabuliders@rediffmail.com',
     description: 'Our hotel offers a perfect blend of comfort, elegance, and spacious event facilities. With 55 well-appointed rooms, including 1 luxurious suite room, we ensure a relaxing stay for business and leisure guests alike. For celebrations and corporate events, we feature two fully equipped banquet halls spanning 5,000 sq. ft. and 2,000 sq. ft., ideal for weddings, conferences, and social gatherings. Complementing our indoor venues are two beautifully landscaped lawns of 20,000 sq. ft. and 10,000 sq. ft., designed to host grand weddings and outdoor events with ease.',
     images: [
+         '/Facade A.jpg',
       '/tu1.jpg',
       '/tu2.jpg',
       '/tu3.jpg',
-      '/tu4.jpg'
+      '/tu4.jpg',
+      '/Banquet 2A.jpg',
+      '/Banquet 2B.jpg',
+      '/Banquet 3B.jpg',
+      '/Restaurant C.jpg',
+      '/Room bathroom.jpg',
     ],
     features: [
       '55 Well-Appointed Guest Rooms',
