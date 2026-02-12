@@ -28,11 +28,10 @@
 
     const businessUnits = [
       { name: 'Real Estate', href: '/projects' },
-      { name: 'Petrol Pump', href: '/petrol-pump' },
-      { name: 'Warehouse & Logistics', href: '/warehouse' },
-      { name: 'Hospitality', href: '/marriage-garden' },
-      { name: 'Software Consulting Firm', href: '/warehouse' },
-      { name: 'Agro-Service', href: '/warehouse' }
+      { name: 'Petrol Pump', href: '/ventures/mahendra-fuel-point' },
+      { name: 'Warehouse & Logistics', href: '/ventures/mahendra-warehouse' },
+      { name: 'Hospitality', href: '/ventures/kasturi-hospitality' },
+      { name: 'Agro-Service', href: '/ventures/mahendra-agro-services' }
     ]
 
     return (
@@ -174,10 +173,10 @@
                 >
                   Terms & Conditions & Privacy Policy
                 </button>
-                <span className="text-gray-600">|</span>
+                {/* <span className="text-gray-600">|</span>
                 <Link href="/sitemap" className="text-gray-400 hover:text-primary-400 transition-colors">
                   Sitemap
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
