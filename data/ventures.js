@@ -149,10 +149,10 @@ export const venturesData = {
     email: 'mahendrabuliders@rediffmail.com',
     description: 'Our hotel offers a perfect blend of comfort, elegance, and spacious event facilities. With 55 well-appointed rooms, including 1 luxurious suite room, we ensure a relaxing stay for business and leisure guests alike. For celebrations and corporate events, we feature two fully equipped banquet halls spanning 5,000 sq. ft. and 2,000 sq. ft., ideal for weddings, conferences, and social gatherings. Complementing our indoor venues are two beautifully landscaped lawns of 20,000 sq. ft. and 10,000 sq. ft., designed to host grand weddings and outdoor events with ease.',
     images: [
-      'https://images.unsplash.com/photo-1519167758481-83f19106ae4f?w=1920&q=80',
-      'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&q=80',
-      'https://images.unsplash.com/photo-1462883334153-bc1e0e9bd00b?w=1920&q=80',
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80'
+      '/tu1.jpg',
+      '/tu2.jpg',
+      '/tu3.jpg',
+      '/tu4.jpg'
     ],
     features: [
       '55 Well-Appointed Guest Rooms',
