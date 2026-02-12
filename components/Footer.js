@@ -30,7 +30,7 @@
       { name: 'Real Estate', href: '/projects' },
       { name: 'Petrol Pump', href: '/ventures/mahendra-fuel-point' },
       { name: 'Warehouse & Logistics', href: '/ventures/mahendra-warehouse' },
-      { name: 'Hospitality', href: '/ventures/kasturi-hospitality' },
+      { name: 'Hospitality', href: '/ventures/hotel-tulip-inn' },
       { name: 'Agro-Service', href: '/ventures/mahendra-agro-services' }
     ]
 
