@@ -44,10 +44,10 @@ export const venturesData = {
     email: 'mahendrabuliders@rediffmail.com',
     description: 'Mahendra Warehouse provides premier warehousing and logistics solutions with strategic locations near Raja Bhoj Airport. Perfect for e-commerce, manufacturing, and distribution businesses seeking secure and spacious storage facilities.',
     images: [
-      'https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=1920&q=80',
-      'https://images.unsplash.com/photo-1587293852122-fd7247fc36a0?w=1920&q=80',
-      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1920&q=80',
-      'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=80'
+      '/IMG_3068.jpg',
+      '/IMG_3069.jpg',
+      '/IMG_3070.jpg',
+      '/IMG_3071.jpg'
     ],
     features: [
       'Strategic Airport Location',
@@ -79,10 +79,10 @@ export const venturesData = {
     email: 'mahendrabuliders@rediffmail.com',
     description: 'Located on the New Bhopal Bypass, our 2,00,000+ sq. ft. covered warehouse offers a strategically positioned and well-planned logistics solution. With close proximity to the airport and excellent road connectivity, the facility ensures smooth movement of goods and efficient operations. The campus is designed for scale and convenience, featuring wide internal roads, a dedicated vehicle parking area, and seamless entry and exit for heavy vehicles. We provide modern office spaces and clean restroom facilities for drivers, ensuring comfort and efficiency for all stakeholders.',
     images: [
-      'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1920&q=80',
-      'https://images.unsplash.com/photo-1625246333195-78d9c38ad576?w=1920&q=80',
-      'https://images.unsplash.com/photo-1587293852122-fd7247fc36a0?w=1920&q=80',
-      'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1920&q=80'
+      '/aaaa.jpg',
+      '/bbbb.jpg',
+      '/cccc.jpg',
+      '/dddd.jpg'
     ],
     features: [
       '2,00,000+ sq. ft. Covered Warehouse',
