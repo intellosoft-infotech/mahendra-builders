@@ -310,10 +310,15 @@ export default function VentureDetailPage({ params }) {
               {/* Map */}
               <div className="bg-gray-200 rounded-2xl h-80 overflow-hidden">
                 <iframe
+                  title={`${venture.name} Location`}
                   src={
-                    venture.latitude && venture.longitude
-                      ? `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.${Math.floor(Math.random() * 1000000)}!2d${venture.longitude}!3d${venture.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s!2z${encodeURIComponent(venture.location)}!5e0!3m2!1sen!2sin!4v${Date.now()}`
-                      : `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.${Math.floor(Math.random() * 1000000)}!2d77.463!3d23.259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s!2z${encodeURIComponent(venture.location + ', Bhopal')}!5e0!3m2!1sen!2sin!4v${Date.now()}`
+                    venture.location
+                      ? `https://www.google.com/maps?q=${encodeURIComponent(
+                          `${venture.name}, ${venture.location}`
+                        )}&output=embed`
+                      : `https://www.google.com/maps?q=${encodeURIComponent(
+                          `${venture.name}, Bhopal`
+                        )}&output=embed`
                   }
                   width="100%"
                   height="100%"

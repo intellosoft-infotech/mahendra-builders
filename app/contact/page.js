@@ -228,10 +228,11 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
+              {/* Map */}
               <div className="bg-gray-200 rounded-2xl h-80 overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.3899899999996!2d77.4633!3d23.2599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDE1JzM1LjYiTiA3N8KwMjcnNDcuOSJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                  title="Mahendra Builders Office Location"
+                  src="https://www.google.com/maps?q=Mahendra%20Builders,%20Block%20-%201,%20Mahendra%20Business%20Square,%20E-8%20Extn%20Bawaria%20Kalan,%20Bhopal,%20Madhya%20Pradesh%20462039&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

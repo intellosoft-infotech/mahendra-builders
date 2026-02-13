@@ -30,7 +30,7 @@ export default function ScrollAnimations() {
     const handleScroll = () => {
       const scrolled = window.pageYOffset
       const parallaxElements = document.querySelectorAll('.parallax')
-      
+
       parallaxElements.forEach((el) => {
         const speed = el.dataset.speed || 0.5
         el.style.transform = `translateY(${scrolled * speed}px)`
