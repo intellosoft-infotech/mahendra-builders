@@ -2,7 +2,6 @@
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import ScrollAnimations from '@/components/ScrollAnimations'
 
 export const metadata = {
   title: 'Mahendra Builders - Leading Property Developers in Bhopal',
@@ -18,7 +17,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ScrollAnimations />
         <Navbar />
         <main>{children}</main>
         <Footer />

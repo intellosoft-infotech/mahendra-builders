@@ -206,11 +206,10 @@ html {
 .stagger-5 { animation-delay: 0.5s; }
 .stagger-6 { animation-delay: 0.6s; }
 
-/* Reveal on scroll */
+/* Reveal on scroll – disabled (content always visible) */
 .reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .reveal.active {
@@ -218,21 +217,19 @@ html {
   transform: translateY(0);
 }
 
-/* Fade on scroll */
+/* Fade on scroll – disabled */
 .fade-on-scroll {
-  opacity: 0;
-  transition: opacity 0.8s ease-out;
+  opacity: 1;
 }
 
 .fade-on-scroll.fade-in-active {
   opacity: 1;
 }
 
-/* Slide from left */
+/* Slide from left – disabled */
 .slide-left {
-  opacity: 0;
-  transform: translateX(-60px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .slide-left.slide-in-active {
@@ -240,11 +237,10 @@ html {
   transform: translateX(0);
 }
 
-/* Slide from right */
+/* Slide from right – disabled */
 .slide-right {
-  opacity: 0;
-  transform: translateX(60px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .slide-right.slide-in-active {
@@ -252,11 +248,10 @@ html {
   transform: translateX(0);
 }
 
-/* Scale on scroll */
+/* Scale on scroll – disabled */
 .scale-on-scroll {
-  opacity: 0;
-  transform: scale(0.85);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: scale(1);
 }
 
 .scale-on-scroll.scale-in-active {

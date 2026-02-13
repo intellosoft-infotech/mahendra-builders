@@ -1,13 +1,16 @@
 'use client'
 
 import { useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function ScrollAnimations() {
+  const pathname = usePathname()
+
   useEffect(() => {
     // Intersection Observer for reveal animations
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
+      rootMargin: '0px 0px -100px 0px',
     }
 
     const observer = new IntersectionObserver((entries) => {
@@ -83,8 +86,14 @@ export default function ScrollAnimations() {
       slideLeftElements.forEach((el) => slideObserver.unobserve(el))
       slideRightElements.forEach((el) => slideObserver.unobserve(el))
       scaleElements.forEach((el) => scaleObserver.unobserve(el))
+
+      // Fully disconnect observers to avoid leaks and stale references
+      observer.disconnect()
+      fadeObserver.disconnect()
+      slideObserver.disconnect()
+      scaleObserver.disconnect()
     }
-  }, [])
+  }, [pathname])
 
   return null
 }
