@@ -105,7 +105,9 @@ export default function Hero() {
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
+              index === currentSlide
+                ? 'opacity-100 pointer-events-auto'
+                : 'opacity-0 pointer-events-none'
             }`}
           >
             {/* Background Image with Overlay */}
@@ -153,13 +155,13 @@ export default function Hero() {
           onClick={prevSlide}
           className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/20 transition-all group z-10"
         >
-          <ChevronLeft className="text-white group-hover:scale-110 transition-transform" size={20} sm={{ size: 28 }} />
+          <ChevronLeft className="text-white group-hover:scale-110 transition-transform" size={24} />
         </button>
         <button
           onClick={nextSlide}
           className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-2 sm:p-3 rounded-full hover:bg-white/20 transition-all group z-10"
         >
-          <ChevronRight className="text-white group-hover:scale-110 transition-transform" size={20} sm={{ size: 28 }} />
+          <ChevronRight className="text-white group-hover:scale-110 transition-transform" size={24} />
         </button>
 
         {/* Slide Indicators */}
@@ -184,7 +186,7 @@ export default function Hero() {
               <div key={index} className="text-center group">
                 <div className="flex justify-center mb-2 sm:mb-3">
                   <div className="p-2 sm:p-3 bg-primary-50 rounded-lg group-hover:bg-primary-100 transition-colors">
-                    <stat.icon className="text-primary-600" size={20} sm={{ size: 28 }} />
+                    <stat.icon className="text-primary-600" size={24} />
                   </div>
                 </div>
                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1">

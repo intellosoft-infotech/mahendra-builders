@@ -29,7 +29,7 @@ export default function CTA() {
             {[
               { icon: Phone, title: 'Call Us', subtitle: 'Monday - Saturday', info: '0755-4278331', link: 'tel:07554278331' },
               { icon: Mail, title: 'Email Us', subtitle: 'Quick Response', info: 'mahendrabuliders@rediffmail.com', link: 'mailto:mahendrabuliders@rediffmail.com' },
-              { icon: MessageSquare, title: 'WhatsApp', subtitle: 'Instant Connect', info: '+91 8085328281', link: 'https://web.whatsapp.com/send?phone=+918085328281&text=Hello, Mahendra Builders' }
+              { icon: MessageSquare, title: 'WhatsApp', subtitle: 'Instant Connect', info: '+91 9827205617', link: 'https://web.whatsapp.com/send?phone=+919827205617&text=Hello, Mahendra Builders' }
             ].map((method, index) => (
               <a
                 key={index}
@@ -71,7 +71,7 @@ export default function CTA() {
           {/* Additional Info */}
           <div className="mt-12 text-center">
             <p className="text-white/80 text-sm">
-              <strong className="text-white">Office Hours:</strong> Monday - Saturday, 9:00 AM - 6:00 PM
+              <strong className="text-white">Office Hours:</strong> Monday - Saturday, 10:00 AM - 7:00 PM
             </p>
           </div>
         </div>

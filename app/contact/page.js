@@ -28,7 +28,7 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['0755-4278331', '+91 8085328281'],
+      details: ['0755-4278331', '+91 9827205617'],
       action: 'tel:07554278331'
     },
     {
@@ -46,7 +46,7 @@ export default function ContactPage() {
     {
       icon: Clock,
       title: 'Working Hours',
-      details: ['Monday - Saturday', '9:00 AM - 6:00 PM'],
+      details: ['Monday - Saturday', '10:00 AM - 7:00 PM'],
       action: null
     }
   ]

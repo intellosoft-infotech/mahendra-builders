@@ -73,30 +73,7 @@ export default function CareerPage() {
       experience: '1-3 years',
       description: 'Drive sales and build relationships with potential customers'
     },
-    {
-      title: 'Project Manager',
-      department: 'Operations',
-      location: 'Bhopal',
-      type: 'Full Time',
-      experience: '5-7 years',
-      description: 'Oversee multiple projects and coordinate with various teams'
-    },
-    {
-      title: 'Accountant',
-      department: 'Finance',
-      location: 'Bhopal',
-      type: 'Full Time',
-      experience: '2-4 years',
-      description: 'Manage financial records and ensure compliance with regulations'
-    },
-    {
-      title: 'Marketing Manager',
-      department: 'Marketing',
-      location: 'Bhopal',
-      type: 'Full Time',
-      experience: '4-6 years',
-      description: 'Develop and execute marketing strategies for our projects'
-    }
+   
   ]
 
   return (

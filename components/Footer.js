@@ -185,7 +185,7 @@
         {/* Floating Action Buttons */}
         <div className="fixed bottom-6 right-6 flex flex-col space-y-3 z-50">
           <a
-            href="https://web.whatsapp.com/send?phone=+918085328281&text=Hello, Mahendra Builders"
+            href="https://web.whatsapp.com/send?phone=+919827205617&text=Hello, Mahendra Builders"
             target="_blank"
             rel="noopener noreferrer"
             className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all transform hover:scale-110"
