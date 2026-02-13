@@ -13,7 +13,7 @@ export default function GalleryPage() {
     { id: 'residential', name: 'Residential', icon: Home },
     { id: 'commercial', name: 'Commercial', icon: Building2 },
     { id: 'warehouse', name: 'Warehouse', icon: Warehouse },
-    { id: 'events', name: 'Events', icon: Users }
+    // { id: 'events', name: 'Events', icon: Users }
   ]
 
   const galleryImages = [
@@ -45,13 +45,13 @@ export default function GalleryPage() {
       category: 'warehouse',
       description: 'Strategic logistics solution'
     },
-    {
-      id: 5,
-      src: 'https://mahendrabuilders.com/wp-content/uploads/2021/04/UTSAV.jpg',
-      title: 'Mahendra Utsav',
-      category: 'events',
-      description: 'Premium hospitality venue'
-    },
+    // {
+    //   id: 5,
+    //   src: 'https://mahendrabuilders.com/wp-content/uploads/2021/04/UTSAV.jpg',
+    //   title: 'Mahendra Utsav',
+    //   category: 'events',
+    //   description: 'Premium hospitality venue'
+    // },
     {
       id: 6,
       src: 'https://mahendrabuilders.com/wp-content/uploads/2021/04/sipra-project.jpg',

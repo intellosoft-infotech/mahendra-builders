@@ -47,7 +47,7 @@ export default function Navbar() {
         },
       ],
     },
-    { name: 'Career', href: '/career' },
+    { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
   ]
 

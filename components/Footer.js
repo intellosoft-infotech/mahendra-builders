@@ -13,7 +13,7 @@
     const quickLinks = [
       { name: 'Our Mission', href: '/our-mission' },
       { name: 'Our Vision', href: '/our-vision' },
-      { name: 'Career With Us', href: '/career' },
+      { name: 'Career With Us', href: '/careers' },
       // { name: 'Gallery', href: '/gallery' },
       { name: 'Contact Us', href: '/contact' }
     ]
