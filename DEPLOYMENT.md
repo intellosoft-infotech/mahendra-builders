@@ -10,18 +10,15 @@ Create a `.env.local` file in your project root (or set them in your hosting pla
 
 **For Rediffmail Email (Current Setup):**
 ```env
-SMTP_HOST=smtp.rediffmail.com
-SMTP_PORT=465
-SMTP_USER=mahendrabuilders@rediffmail.com
-SMTP_PASS=your-rediffmail-password
-```
-
-**Alternative (Old variable names still work):**
-```env
 GODADDY_SMTP_HOST=smtp.rediffmail.com
 GODADDY_SMTP_PORT=465
 GODADDY_SMTP_USER=mahendrabuilders@rediffmail.com
 GODADDY_SMTP_PASS=your-rediffmail-password
+```
+
+**Note:** For free Rediffmail accounts, try username without @rediffmail.com:
+```env
+GODADDY_SMTP_USER=mahendrabuilders
 ```
 
 **Important Notes:**
@@ -51,31 +48,37 @@ GODADDY_SMTP_PASS=your-rediffmail-password
 
 ### Common Issues & Solutions
 
-#### Issue: "535 5.7.0 Authorization failed" (GoDaddy Authentication Error)
+#### Issue: "535 5.7.0 Authorization failed" (Rediffmail Authentication Error)
 **This is the most common issue!** Solutions:
 
-1. **Use App-Specific Password (Recommended)**:
-   - Go to GoDaddy Email Settings
-   - Enable "App Passwords" or "Two-Factor Authentication"
-   - Generate an app-specific password
-   - Use this password in `GODADDY_SMTP_PASS` instead of your regular password
+1. **Check Username Format**:
+   - For **free Rediffmail accounts**: Use just the username part (e.g., `mahendrabuilders` NOT `mahendrabuilders@rediffmail.com`)
+   - For **Rediffmail Pro/paid accounts**: Use full email address (e.g., `mahendrabuilders@rediffmail.com`)
+   - Try both formats if unsure
 
-2. **Try Port 587 instead of 465**:
-   - Set `GODADDY_SMTP_PORT=587` in Vercel
-   - Port 587 uses STARTTLS which works better with GoDaddy
+2. **Verify Password**:
+   - Make sure the password in Vercel matches exactly what you use to log into Rediffmail webmail
+   - Rediffmail passwords are case-sensitive
+   - Check for any extra spaces or special characters
 
-3. **Verify Email Credentials**:
-   - Make sure `GODADDY_SMTP_USER` is the FULL email address (e.g., `yourname@yourdomain.com`)
-   - Not just the username part
+3. **Enable SMTP Access**:
+   - Log into your Rediffmail account at https://mail.rediffmail.com
+   - Go to Settings → Mail Settings → POP/IMAP Settings
+   - Ensure "Enable SMTP" or "Allow SMTP Access" is enabled
+   - Some free accounts may have SMTP disabled by default
 
-4. **Enable SMTP in GoDaddy**:
-   - Log into GoDaddy Email
-   - Go to Settings → Email Settings
-   - Ensure "SMTP Authentication" is enabled
+4. **Try Different SMTP Host**:
+   - Try `smtp.rediffmail.com` (default)
+   - Or try `smtp.rediffmailpro.com` if you have a Pro account
 
-5. **Check Email Account Status**:
-   - Make sure the email account is active and not suspended
+5. **Check Account Status**:
+   - Make sure your Rediffmail account is active and not suspended
    - Verify you can log into webmail with the same credentials
+   - Free accounts may have sending limits
+
+6. **Alternative: Use Gmail SMTP** (if Rediffmail doesn't work):
+   - Consider using Gmail SMTP with an app-specific password
+   - More reliable for production use
 
 #### Issue: "Failed to send enquiry" error
 **Solution**: 

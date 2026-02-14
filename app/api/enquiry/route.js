@@ -4,18 +4,35 @@ export const runtime = 'nodejs'
 
 export async function POST(request) {
   try {
-    // Validate environment variables (supporting both old and new variable names)
-    const smtpHost = process.env.SMTP_HOST || process.env.GODADDY_SMTP_HOST
-    const smtpUser = process.env.SMTP_USER || process.env.GODADDY_SMTP_USER
-    const smtpPass = process.env.SMTP_PASS || process.env.GODADDY_SMTP_PASS
+    // Validate environment variables (using old variable names)
+    const smtpHost = process.env.GODADDY_SMTP_HOST
+    const smtpUser = process.env.GODADDY_SMTP_USER
+    const smtpPass = process.env.GODADDY_SMTP_PASS
     
     if (!smtpHost || !smtpUser || !smtpPass) {
       console.error('Missing SMTP environment variables')
+      console.error('SMTP Config Check:', {
+        host: smtpHost || 'MISSING',
+        user: smtpUser || 'MISSING',
+        pass: smtpPass ? 'SET' : 'MISSING',
+        port: process.env.GODADDY_SMTP_PORT || '465'
+      })
       return Response.json({ 
         success: false, 
         message: 'Server configuration error. Please contact administrator.' 
       }, { status: 500 })
     }
+    
+    // Debug logging (password is masked)
+    console.log('SMTP Configuration:', {
+      host: smtpHost,
+      port: parseInt(process.env.GODADDY_SMTP_PORT || '465'),
+      user: smtpUser,
+      userLength: smtpUser.length,
+      passSet: smtpPass ? 'YES' : 'NO',
+      passLength: smtpPass ? smtpPass.length : 0,
+      environment: process.env.NODE_ENV
+    })
 
     const body = await request.json()
     const { name, email, phone, message, projectName, source } = body
@@ -29,10 +46,13 @@ export async function POST(request) {
     }
 
     // Create transporter with Rediffmail SMTP settings
-    // Rediffmail uses port 465 (SSL) or 587 (STARTTLS)
-    const smtpPort = parseInt(process.env.SMTP_PORT || process.env.GODADDY_SMTP_PORT || '465')
+    // Rediffmail uses port 465 (SSL)
+    const smtpPort = parseInt(process.env.GODADDY_SMTP_PORT || '465')
     const useSecure = smtpPort === 465
     
+    // Rediffmail SMTP configuration
+    // Note: For free Rediffmail accounts, username might need to be without @rediffmail.com
+    // For paid/Pro accounts, use full email address
     const transporter = nodemailer.createTransport({
       host: smtpHost || 'smtp.rediffmail.com',
       port: smtpPort,
@@ -42,12 +62,13 @@ export async function POST(request) {
         pass: smtpPass,
       },
       tls: {
-        rejectUnauthorized: false
+        rejectUnauthorized: false,
+        minVersion: 'TLSv1'
       },
       requireTLS: !useSecure,
-      connectionTimeout: 10000,
-      greetingTimeout: 10000,
-      socketTimeout: 10000
+      connectionTimeout: 15000,
+      greetingTimeout: 15000,
+      socketTimeout: 15000
     })
 
     // Email content
