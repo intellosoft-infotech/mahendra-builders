@@ -8,7 +8,7 @@ export const projectsData = {
     latitude: 23.1550221,
     longitude: 77.4467194,
     phone: '+91 9589011668',
-    email: 'mahendrabuliders@rediffmail.com',
+    email: 'mahendrabuilders@rediffmail.com',
     description: 'Mahendra Ample Park is a premium residential project that redefines modern living. Strategically located in Salaiya, this development offers the perfect blend of luxury, comfort, and convenience. With world-class amenities and meticulous attention to detail, every aspect is designed to enhance your lifestyle.',
     images: [
       'https://mahendrabuilders.com/wp-content/uploads/2021/03/main_page.jpg',
@@ -50,7 +50,7 @@ export const projectsData = {
     latitude: 23.1748401,
     longitude: 77.4756807,
     phone: '+91 9303356668',
-    email: 'mahendrabuliders@rediffmail.com',
+    email: 'mahendrabuilders@rediffmail.com',
     description: 'Mahendra Greenwoods Extension is a state-of-the-art residential development on prime Hoshangabad Road. Following the success of Mahendra Township Phase-I & II and Mahendra City, this project offers a unique lifestyle concept with pollution-free atmosphere and lush greenery. It\'s a perfect blend of nature and modern living.',
     images: [
       'https://mahendrabuilders.com/wp-content/uploads/2021/03/mgg2.jpg',
@@ -94,7 +94,7 @@ export const projectsData = {
     latitude: 23.1766699,
     longitude: 77.4376346,
     phone: '+91 7024143668',
-    email: 'mahendrabuliders@rediffmail.com',
+    email: 'mahendrabuilders@rediffmail.com',
     description: 'Mahendra Shipra is an exquisite residential development located in Mahendra Township Phase-1. Designed with meticulous attention to detail, this project offers spacious layouts with modern amenities. The project is developed with Vastu principles and provides a perfect blend of suburban peace and urban connectivity.',
     images: [
       'https://mahendrabuilders.com/wp-content/uploads/2021/03/shipra_plan1.jpg',
@@ -138,7 +138,7 @@ export const projectsData = {
     latitude: 23.177026,
     longitude: 77.4393657,
     phone: '+91 7024143668',
-    email: 'mahendrabuliders@rediffmail.com',
+    email: 'mahendrabuilders@rediffmail.com',
     description: 'Mahendra Business Square is a state-of-the-art commercial development offering premium office and retail spaces. Located on the prime 200 Ft. Kolar Road with excellent connectivity, it\'s the ideal destination for businesses looking for professional premises that make an impression.',
     images: [
       'https://mahendrabuilders.com/wp-content/uploads/2021/03/plan3-2.jpg',
@@ -181,7 +181,7 @@ export const projectsData = {
     latitude: 23.1550221,
     longitude: 77.4467194,
     phone: '+91 9589011668',
-    email: 'mahendrabuliders@rediffmail.com',
+    email: 'mahendrabuilders@rediffmail.com',
     description: 'Mahendra Ample Business Park is a world-class professional office building designed for businesses seeking premium commercial space. Located in front of Mahendra Ample Park, it offers an impressive setting that reflects your attention to detail in business. Perfect for corporates, MNCs, and professional enterprises.',
     images: [
       'https://mahendrabuilders.com/wp-content/uploads/2021/03/ma_about3.jpg',
@@ -225,7 +225,7 @@ export const projectsData = {
     latitude: 23.177026,
     longitude: 77.4393657,
     phone: '+91 7024143668',
-    email: 'mahendrabuliders@rediffmail.com',
+    email: 'mahendrabuilders@rediffmail.com',
     description: 'Mahendra Medi Square is a specialized commercial development designed for healthcare and retail businesses. With prime location and modern infrastructure, it serves as the perfect hub for medical professionals and retail entrepreneurs seeking premium commercial space.',
     images: [
       'https://mahendrabuilders.com/wp-content/uploads/2021/03/medi_plan3.jpg',

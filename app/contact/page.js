@@ -1,9 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { Phone, Mail, MapPin, Clock, Send, Building2 } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { Phone, Mail, MapPin, Clock, Send, Building2, Loader2 } from 'lucide-react'
 
 export default function ContactPage() {
+  const router = useRouter()
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,12 +15,29 @@ export default function ContactPage() {
     message: ''
   })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission
-    console.log('Form submitted:', formData)
-    alert('Thank you for your inquiry! We will get back to you soon.')
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+    setIsSubmitting(true)
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+      const result = await response.json()
+      if (result.success) {
+        router.push('/thank-you?type=contact')
+      } else {
+        alert('Failed to send message. Please try again.')
+        setIsSubmitting(false)
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('An error occurred. Please try again.')
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e) => {
@@ -34,8 +54,8 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: 'Email',
-      details: ['mahendrabuliders@rediffmail.com'],
-      action: 'mailto:mahendrabuliders@rediffmail.com'
+      details: ['mahendrabuilders@rediffmail.com'],
+      action: 'mailto:mahendrabuilders@rediffmail.com'
     },
     {
       icon: MapPin,
@@ -192,10 +212,20 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full btn-primary flex items-center justify-center space-x-2"
+                  disabled={isSubmitting}
+                  className="w-full btn-primary flex items-center justify-center space-x-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <span>Send Message</span>
-                  <Send size={20} />
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 size={20} className="animate-spin" />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Send Message</span>
+                      <Send size={20} />
+                    </>
+                  )}
                 </button>
               </form>
             </div>

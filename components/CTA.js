@@ -28,7 +28,7 @@ export default function CTA() {
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
               { icon: Phone, title: 'Call Us', subtitle: 'Monday - Saturday', info: '0755-4278331', link: 'tel:07554278331' },
-              { icon: Mail, title: 'Email Us', subtitle: 'Quick Response', info: 'mahendrabuliders@rediffmail.com', link: 'mailto:mahendrabuliders@rediffmail.com' },
+              { icon: Mail, title: 'Email Us', subtitle: 'Quick Response', info: 'mahendrabuilders@rediffmail.com', link: 'mailto:mahendrabuilders@rediffmail.com' },
               { icon: MessageSquare, title: 'WhatsApp', subtitle: 'Instant Connect', info: '+91 9827205617', link: 'https://web.whatsapp.com/send?phone=+919827205617&text=Hello, Mahendra Builders' }
             ].map((method, index) => (
               <a

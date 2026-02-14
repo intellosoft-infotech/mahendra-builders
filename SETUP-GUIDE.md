@@ -104,7 +104,7 @@ app/
 
 - **Phone:** 0755-4278331
 - **WhatsApp:** +91 9827205617
-- **Email:** mahendrabuliders@rediffmail.com
+- **Email:** mahendrabuilders@rediffmail.com
 - **Address:** Block - 1, Mahendra Business Square, E-8 Extn Bawaria Kalan, Bhopal
 
 ## 🌟 Special Features

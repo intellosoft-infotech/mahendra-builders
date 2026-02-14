@@ -8,7 +8,7 @@ export const venturesData = {
     latitude: 23.1794719,
     longitude: 77.4387062,
     phone: '+91 7554044045',
-    email: 'mahendrabuliders@rediffmail.com',
+    email: 'mahendrabuilders@rediffmail.com',
     description: 'We are a premium fuel destination designed for performance, convenience, and trust. Offering high-quality Petrol, Diesel, and Speed Petrol, we ensure superior efficiency and care for your vehicle. Our facility is equipped with advanced EV charging, complimentary nitrogen air, and air services, delivering a seamless and modern refueling experience. With a strong commitment to quality, safety, and customer satisfaction, we set a higher standard for everyday mobility.',
     images: [
       '/p1.jpeg',
@@ -45,7 +45,7 @@ export const venturesData = {
     latitude: 23.332059,
     longitude: 77.339678,
     phone: '+91 7554278331',
-    email: 'mahendrabuliders@rediffmail.com',
+    email: 'mahendrabuilders@rediffmail.com',
     description: 'Mahendra Warehouse provides premier warehousing and logistics solutions with strategic locations near Raja Bhoj Airport. Perfect for e-commerce, manufacturing, and distribution businesses seeking secure and spacious storage facilities.',
     images: [
       '/IMG_3068.jpg',
@@ -82,7 +82,7 @@ export const venturesData = {
     latitude: 23.0244947,
     longitude: 77.5391918,
     phone: '+91 7554278331',
-    email: 'mahendrabuliders@rediffmail.com',
+    email: 'mahendrabuilders@rediffmail.com',
     description: 'Located on the New Bhopal Bypass, our 2,00,000+ sq. ft. covered warehouse offers a strategically positioned and well-planned logistics solution. With close proximity to the airport and excellent road connectivity, the facility ensures smooth movement of goods and efficient operations. The campus is designed for scale and convenience, featuring wide internal roads, a dedicated vehicle parking area, and seamless entry and exit for heavy vehicles. We provide modern office spaces and clean restroom facilities for drivers, ensuring comfort and efficiency for all stakeholders.',
     images: [
       '/aaaa.jpg',
@@ -119,7 +119,7 @@ export const venturesData = {
     latitude: 23.3168444,
     longitude: 77.4893365,
     phone: '+91 8349980636',
-    email: 'mahendrabuliders@rediffmail.com',
+    email: 'mahendrabuilders@rediffmail.com',
     description: 'Tridev Logistics and Warehousing Park is a state-of-the-art facility on the New Bhopal Bypass offering complete logistics and warehousing solutions. With up to 2.5 lakh sq. ft. warehouse space and 5 acres of open-yard land available, we provide strategic solutions for transportation and distribution. Our second facility in Noorganj, located behind Bansal College in Village Noorganj, features a 75,000 sq. ft. covered warehouse with wide internal roads for smooth heavy vehicle movement, dedicated parking, and comprehensive driver facilities.',
     images: [
       '/bbb.jpg',
@@ -156,7 +156,7 @@ export const venturesData = {
     latitude: 23.1792521,
     longitude: 77.4389909,
     phone: '+91 9201821835',
-    email: 'mahendrabuliders@rediffmail.com',
+    email: 'mahendrabuilders@rediffmail.com',
     description: 'Our hotel offers a perfect blend of comfort, elegance, and spacious event facilities. With 55 well-appointed rooms, including 1 luxurious suite room, we ensure a relaxing stay for business and leisure guests alike. For celebrations and corporate events, we feature two fully equipped banquet halls spanning 5,000 sq. ft. and 2,000 sq. ft., ideal for weddings, conferences, and social gatherings. Complementing our indoor venues are two beautifully landscaped lawns of 20,000 sq. ft. and 10,000 sq. ft., designed to host grand weddings and outdoor events with ease.',
     images: [
          '/Facade A.jpg',
@@ -197,7 +197,7 @@ export const venturesData = {
     status: 'Operational',
     location: 'Bhopal, Madhya Pradesh',
     phone: '+91 7554278331',
-    email: 'mahendrabuliders@rediffmail.com',
+    email: 'mahendrabuilders@rediffmail.com',
     description: 'Our upcoming hotel is thoughtfully designed to offer comfort, style, and memorable experiences. With 33 well-appointed rooms, we provide a relaxing stay for both business and leisure travelers. The property features a 1,500 sq. ft. banquet hall, ideal for intimate celebrations and corporate gatherings, along with a rooftop restaurant offering a refined dining experience with beautiful views.',
     images: [
       'https://images.unsplash.com/photo-1519671482677-36c70a1f21d9?w=1920&q=80',
@@ -232,7 +232,7 @@ export const venturesData = {
     status: 'Operational',
     location: 'Bhopal, Madhya Pradesh',
     phone: '+91 7554278331',
-    email: 'mahendrabuliders@rediffmail.com',
+    email: 'mahendrabuilders@rediffmail.com',
     description: 'Intellosoft Infotech Private Limited provides innovative IT solutions and software services. We specialize in custom software development, web solutions, and digital transformation for businesses.',
     images: [
       'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&q=80',

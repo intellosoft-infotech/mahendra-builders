@@ -152,5 +152,5 @@ Copyright © 2024 Mahendra Builders & Developers. All Rights Reserved.
 
 For any queries or support:
 - Phone: 0755-4278331
-- Email: mahendrabuliders@rediffmail.com
+- Email: mahendrabuilders@rediffmail.com
 - Address: Block - 1, Mahendra Business Square, E-8 Extn Bawaria Kalan, Bhopal

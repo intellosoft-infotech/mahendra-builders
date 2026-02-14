@@ -1,9 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { Briefcase, Send, Users, TrendingUp, Heart, Award, ChevronRight } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { Briefcase, Send, Users, TrendingUp, Heart, Award, ChevronRight, Loader2 } from 'lucide-react'
 
 export default function CareerPage() {
+  const router = useRouter()
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,18 +17,37 @@ export default function CareerPage() {
     message: ''
   })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    alert('Thank you for your application! We will review and get back to you soon.')
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      position: '',
-      experience: '',
-      resume: null,
-      message: ''
-    })
+    setIsSubmitting(true)
+    try {
+      const formDataToSend = new FormData()
+      formDataToSend.append('name', formData.name)
+      formDataToSend.append('email', formData.email)
+      formDataToSend.append('phone', formData.phone)
+      formDataToSend.append('position', formData.position)
+      formDataToSend.append('experience', formData.experience)
+      formDataToSend.append('message', formData.message)
+      if (formData.resume) {
+        formDataToSend.append('resume', formData.resume)
+      }
+
+      const response = await fetch('/api/careers', {
+        method: 'POST',
+        body: formDataToSend,
+      })
+      const result = await response.json()
+      if (result.success) {
+        router.push('/thank-you?type=career')
+      } else {
+        alert('Failed to submit application. Please try again.')
+        setIsSubmitting(false)
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('An error occurred. Please try again.')
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e) => {
@@ -306,6 +328,7 @@ export default function CareerPage() {
                     name="resume"
                     accept=".pdf"
                     required
+                    onChange={(e) => setFormData({ ...formData, resume: e.target.files[0] })}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"
                   />
                 </div>
@@ -327,10 +350,20 @@ export default function CareerPage() {
 
                 <button
                   type="submit"
-                  className="w-full btn-primary flex items-center justify-center space-x-2 text-lg py-4"
+                  disabled={isSubmitting}
+                  className="w-full btn-primary flex items-center justify-center space-x-2 text-lg py-4 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <span>Submit Application</span>
-                  <Send size={20} />
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 size={20} className="animate-spin" />
+                      <span>Submitting...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Submit Application</span>
+                      <Send size={20} />
+                    </>
+                  )}
                 </button>
               </form>
             </div>

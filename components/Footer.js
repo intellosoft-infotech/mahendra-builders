@@ -133,8 +133,8 @@
                 </div>
                 <div className="flex items-start space-x-3">
                   <Mail className="text-primary-400 flex-shrink-0 mt-1" size={20} />
-                  <a href="mailto:mahendrabuliders@rediffmail.com" className="text-gray-300 hover:text-primary-400 transition-colors break-all text-sm">
-                    mahendrabuliders@rediffmail.com
+                  <a href="mailto:mahendrabuilders@rediffmail.com" className="text-gray-300 hover:text-primary-400 transition-colors break-all text-sm">
+                    mahendrabuilders@rediffmail.com
                   </a>
                 </div>
               

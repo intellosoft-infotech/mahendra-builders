@@ -1,6 +1,10 @@
+'use client'
+
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MapPin, Phone, Mail, Home, Maximize, Car, Shield, Droplet, Zap, Check, Download } from 'lucide-react'
+import { MapPin, Phone, Mail, Home, Maximize, Car, Shield, Droplet, Zap, Check, Download, Send, Loader2 } from 'lucide-react'
 import { getProjectBySlug } from '@/data/projects'
 import Lightbox from '@/components/Lightbox'
 
@@ -19,7 +23,88 @@ const iconMap = {
 }
 
 export default function ProjectDetailPage({ params }) {
+  const router = useRouter()
   const project = getProjectBySlug(params.slug)
+
+  const [isSubmitting1, setIsSubmitting1] = useState(false)
+  const [isSubmitting2, setIsSubmitting2] = useState(false)
+
+  const [formData1, setFormData1] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  })
+
+  const [formData2, setFormData2] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  })
+
+  const handleSubmit1 = async (e) => {
+    e.preventDefault()
+    setIsSubmitting1(true)
+    try {
+      const response = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData1,
+          projectName: project?.name,
+          source: 'Project Enquiry'
+        }),
+      })
+      const result = await response.json()
+      if (result.success) {
+        router.push('/thank-you?type=enquiry')
+      } else {
+        alert('Failed to send message. Please try again.')
+        setIsSubmitting1(false)
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('An error occurred. Please try again.')
+      setIsSubmitting1(false)
+    }
+  }
+
+  const handleSubmit2 = async (e) => {
+    e.preventDefault()
+    setIsSubmitting2(true)
+    try {
+      const response = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData2,
+          projectName: project?.name,
+          source: 'Project Quick Enquiry'
+        }),
+      })
+      const result = await response.json()
+      if (result.success) {
+        router.push('/thank-you?type=enquiry')
+      } else {
+        alert('Failed to send enquiry. Please try again.')
+        setIsSubmitting2(false)
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      alert('An error occurred. Please try again.')
+      setIsSubmitting2(false)
+    }
+  }
+
+  const handleChange1 = (e) => {
+    setFormData1({ ...formData1, [e.target.name]: e.target.value })
+  }
+
+  const handleChange2 = (e) => {
+    setFormData2({ ...formData2, [e.target.name]: e.target.value })
+  }
 
   if (!project) {
     return (
@@ -145,9 +230,6 @@ export default function ProjectDetailPage({ params }) {
                         <h4 className="text-xl font-bold text-gray-900">{config.type}</h4>
                         <p className="text-gray-600">{config.size}</p>
                       </div>
-                      {/* <div className="text-right">
-                        <p className="text-2xl font-bold text-primary-700">{config.price}</p>
-                      </div> */}
                     </div>
                   </div>
                 ))}
@@ -239,14 +321,17 @@ export default function ProjectDetailPage({ params }) {
                 <p className="text-gray-600">Fill out the form below and we'll get back to you shortly.</p>
               </div>
 
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit1} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="name1" className="block text-sm font-semibold text-gray-700 mb-2">
                     Full Name *
                   </label>
                   <input
                     type="text"
-                    id="name"
+                    id="name1"
+                    name="name"
+                    value={formData1.name}
+                    onChange={handleChange1}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"
                     placeholder="John Doe"
@@ -255,12 +340,15 @@ export default function ProjectDetailPage({ params }) {
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="email1" className="block text-sm font-semibold text-gray-700 mb-2">
                       Email *
                     </label>
                     <input
                       type="email"
-                      id="email"
+                      id="email1"
+                      name="email"
+                      value={formData1.email}
+                      onChange={handleChange1}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"
                       placeholder="john@example.com"
@@ -268,12 +356,15 @@ export default function ProjectDetailPage({ params }) {
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="phone1" className="block text-sm font-semibold text-gray-700 mb-2">
                       Phone *
                     </label>
                     <input
                       type="tel"
-                      id="phone"
+                      id="phone1"
+                      name="phone"
+                      value={formData1.phone}
+                      onChange={handleChange1}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"
                       placeholder="+91 98765 43210"
@@ -282,11 +373,14 @@ export default function ProjectDetailPage({ params }) {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="subject1" className="block text-sm font-semibold text-gray-700 mb-2">
                     Subject *
                   </label>
                   <select
-                    id="subject"
+                    id="subject1"
+                    name="subject"
+                    value={formData1.subject}
+                    onChange={handleChange1}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition"
                   >
@@ -300,11 +394,14 @@ export default function ProjectDetailPage({ params }) {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="message1" className="block text-sm font-semibold text-gray-700 mb-2">
                     Message *
                   </label>
                   <textarea
-                    id="message"
+                    id="message1"
+                    name="message"
+                    value={formData1.message}
+                    onChange={handleChange1}
                     required
                     rows="5"
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition resize-none"
@@ -314,9 +411,20 @@ export default function ProjectDetailPage({ params }) {
 
                 <button
                   type="submit"
-                  className="w-full btn-primary flex items-center justify-center space-x-2"
+                  disabled={isSubmitting1}
+                  className="w-full btn-primary flex items-center justify-center space-x-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <span>Send Message</span>
+                  {isSubmitting1 ? (
+                    <>
+                      <Loader2 size={20} className="animate-spin" />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Send Message</span>
+                      <Send size={20} />
+                    </>
+                  )}
                 </button>
               </form>
             </div>
@@ -395,16 +503,22 @@ export default function ProjectDetailPage({ params }) {
           </div>
 
           <div className="max-w-2xl mx-auto bg-white rounded-2xl p-8 shadow-2xl animate-scale-in">
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit2} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <input
                   type="text"
+                  name="name"
+                  value={formData2.name}
+                  onChange={handleChange2}
                   placeholder="Your Name"
                   className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition"
                   required
                 />
                 <input
                   type="tel"
+                  name="phone"
+                  value={formData2.phone}
+                  onChange={handleChange2}
                   placeholder="Phone Number"
                   className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition"
                   required
@@ -412,17 +526,37 @@ export default function ProjectDetailPage({ params }) {
               </div>
               <input
                 type="email"
+                name="email"
+                value={formData2.email}
+                onChange={handleChange2}
                 placeholder="Email Address"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition"
                 required
               />
               <textarea
+                name="message"
+                value={formData2.message}
+                onChange={handleChange2}
                 placeholder="Your Message"
                 rows="4"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 outline-none transition resize-none"
               ></textarea>
-              <button type="submit" className="w-full btn-primary text-lg py-4">
-                Send Enquiry
+              <button
+                type="submit"
+                disabled={isSubmitting2}
+                className="w-full btn-primary text-lg py-4 flex items-center justify-center space-x-2 disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {isSubmitting2 ? (
+                  <>
+                    <Loader2 size={20} className="animate-spin" />
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Send Enquiry</span>
+                    <Send size={20} />
+                  </>
+                )}
               </button>
             </form>
           </div>
