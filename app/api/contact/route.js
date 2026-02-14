@@ -4,8 +4,12 @@ export const runtime = 'nodejs'
 
 export async function POST(request) {
   try {
-    // Validate environment variables
-    if (!process.env.GODADDY_SMTP_HOST || !process.env.GODADDY_SMTP_USER || !process.env.GODADDY_SMTP_PASS) {
+    // Validate environment variables (supporting both old and new variable names)
+    const smtpHost = process.env.SMTP_HOST || process.env.GODADDY_SMTP_HOST
+    const smtpUser = process.env.SMTP_USER || process.env.GODADDY_SMTP_USER
+    const smtpPass = process.env.SMTP_PASS || process.env.GODADDY_SMTP_PASS
+    
+    if (!smtpHost || !smtpUser || !smtpPass) {
       console.error('Missing SMTP environment variables')
       return Response.json({ 
         success: false, 
@@ -24,23 +28,30 @@ export async function POST(request) {
       }, { status: 400 })
     }
 
-    // Create transporter
+    // Create transporter with Rediffmail SMTP settings
+    const smtpPort = parseInt(process.env.SMTP_PORT || process.env.GODADDY_SMTP_PORT || '465')
+    const useSecure = smtpPort === 465
+    
     const transporter = nodemailer.createTransport({
-      host: process.env.GODADDY_SMTP_HOST,
-      port: parseInt(process.env.GODADDY_SMTP_PORT || '465'),
-      secure: parseInt(process.env.GODADDY_SMTP_PORT || '465') === 465,
+      host: smtpHost || 'smtp.rediffmail.com',
+      port: smtpPort,
+      secure: useSecure,
       auth: {
-        user: process.env.GODADDY_SMTP_USER,
-        pass: process.env.GODADDY_SMTP_PASS,
+        user: smtpUser,
+        pass: smtpPass,
       },
       tls: {
         rejectUnauthorized: false
-      }
+      },
+      requireTLS: !useSecure,
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 10000
     })
 
     // Email content
     const mailOptions = {
-      from: process.env.GODADDY_SMTP_USER,
+      from: smtpUser,
       to: 'mahendrabuilders@rediffmail.com', // or another recipient
       subject: `Contact Form: ${subject}`,
       html: `
