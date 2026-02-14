@@ -156,15 +156,16 @@ export async function POST(request) {
       await transporter.sendMail(mailOptions)
       return Response.json({ success: true, message: 'Application submitted successfully' })
     } catch (authError) {
-      // If authentication fails and we tried without @rediffmail.com, try with it
-      if (authError.code === 'EAUTH' && smtpUser.includes('@rediffmail.com') && authUser === usernameWithoutDomain) {
-        console.log('Auth failed with username without domain, retrying with full email:', smtpUser)
+      // If authentication fails, try with @rediffmail.com if we haven't already
+      if (authError.code === 'EAUTH' && authUser === usernameWithoutDomain && !smtpUser.includes('@')) {
+        const fullEmail = `${smtpUser}@rediffmail.com`
+        console.log('Auth failed with username without domain, retrying with full email:', fullEmail)
         transporter = nodemailer.createTransport({
           host: smtpHost || 'smtp.rediffmail.com',
           port: smtpPort,
           secure: useSecure,
           auth: {
-            user: smtpUser, // Try with full email
+            user: fullEmail, // Try with full email
             pass: smtpPass,
           },
           tls: {
@@ -176,8 +177,13 @@ export async function POST(request) {
           greetingTimeout: 15000,
           socketTimeout: 15000
         })
-        await transporter.sendMail(mailOptions)
-        return Response.json({ success: true, message: 'Application submitted successfully' })
+        try {
+          await transporter.sendMail(mailOptions)
+          return Response.json({ success: true, message: 'Application submitted successfully' })
+        } catch (retryError) {
+          console.error('Retry with full email also failed:', retryError.message)
+          throw authError // Throw original error
+        }
       }
       throw authError
     }

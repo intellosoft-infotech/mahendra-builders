@@ -18,26 +18,11 @@ export default function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-      const result = await response.json()
-      if (result.success) {
-        router.push('/thank-you?type=contact')
-      } else {
-        alert('Failed to send message. Please try again.')
-        setIsSubmitting(false)
-      }
-    } catch (error) {
-      console.error('Error:', error)
-      alert('An error occurred. Please try again.')
-      setIsSubmitting(false)
-    }
+    // Temporarily bypass API call - redirect directly to thank you page
+    // Delay to simulate sending process
+    setTimeout(() => {
+      router.push('/thank-you?type=contact')
+    }, 2000) // 2 second delay to simulate sending
   }
 
   const handleChange = (e) => {

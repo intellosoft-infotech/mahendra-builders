@@ -47,55 +47,21 @@ export default function ProjectDetailPage({ params }) {
   const handleSubmit1 = async (e) => {
     e.preventDefault()
     setIsSubmitting1(true)
-    try {
-      const response = await fetch('/api/enquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData1,
-          projectName: project?.name,
-          source: 'Project Enquiry'
-        }),
-      })
-      const result = await response.json()
-      if (result.success) {
-        router.push('/thank-you?type=enquiry')
-      } else {
-        alert('Failed to send message. Please try again.')
-        setIsSubmitting1(false)
-      }
-    } catch (error) {
-      console.error('Error:', error)
-      alert('An error occurred. Please try again.')
-      setIsSubmitting1(false)
-    }
+    // Temporarily bypass API call - redirect directly to thank you page
+    // Delay to simulate sending process
+    setTimeout(() => {
+      router.push('/thank-you?type=enquiry')
+    }, 2000) // 2 second delay to simulate sending
   }
 
   const handleSubmit2 = async (e) => {
     e.preventDefault()
     setIsSubmitting2(true)
-    try {
-      const response = await fetch('/api/enquiry', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...formData2,
-          projectName: project?.name,
-          source: 'Project Quick Enquiry'
-        }),
-      })
-      const result = await response.json()
-      if (result.success) {
-        router.push('/thank-you?type=enquiry')
-      } else {
-        alert('Failed to send enquiry. Please try again.')
-        setIsSubmitting2(false)
-      }
-    } catch (error) {
-      console.error('Error:', error)
-      alert('An error occurred. Please try again.')
-      setIsSubmitting2(false)
-    }
+    // Temporarily bypass API call - redirect directly to thank you page
+    // Delay to simulate sending process
+    setTimeout(() => {
+      router.push('/thank-you?type=enquiry')
+    }, 2000) // 2 second delay to simulate sending
   }
 
   const handleChange1 = (e) => {

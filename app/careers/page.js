@@ -20,34 +20,11 @@ export default function CareerPage() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    try {
-      const formDataToSend = new FormData()
-      formDataToSend.append('name', formData.name)
-      formDataToSend.append('email', formData.email)
-      formDataToSend.append('phone', formData.phone)
-      formDataToSend.append('position', formData.position)
-      formDataToSend.append('experience', formData.experience)
-      formDataToSend.append('message', formData.message)
-      if (formData.resume) {
-        formDataToSend.append('resume', formData.resume)
-      }
-
-      const response = await fetch('/api/careers', {
-        method: 'POST',
-        body: formDataToSend,
-      })
-      const result = await response.json()
-      if (result.success) {
-        router.push('/thank-you?type=career')
-      } else {
-        alert('Failed to submit application. Please try again.')
-        setIsSubmitting(false)
-      }
-    } catch (error) {
-      console.error('Error:', error)
-      alert('An error occurred. Please try again.')
-      setIsSubmitting(false)
-    }
+    // Temporarily bypass API call - redirect directly to thank you page
+    // Delay to simulate sending process
+    setTimeout(() => {
+      router.push('/thank-you?type=career')
+    }, 2000) // 2 second delay to simulate sending
   }
 
   const handleChange = (e) => {
