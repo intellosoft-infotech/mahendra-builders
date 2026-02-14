@@ -51,16 +51,18 @@ export async function POST(request) {
     const useSecure = smtpPort === 465
     
     // For free Rediffmail accounts, username should be without @rediffmail.com
-    // Try without @rediffmail.com first if it's present
+    // Try both formats: without @rediffmail.com first, then with it
     let authUser = smtpUser
-    if (smtpUser.includes('@rediffmail.com')) {
-      // Try username without @rediffmail.com for free accounts
-      authUser = smtpUser.replace('@rediffmail.com', '')
-      console.log('Trying username without @rediffmail.com:', authUser)
-    }
+    const usernameWithoutDomain = smtpUser.includes('@rediffmail.com') 
+      ? smtpUser.replace('@rediffmail.com', '') 
+      : smtpUser
+    
+    // Try username without @rediffmail.com first (for free accounts)
+    authUser = usernameWithoutDomain
+    console.log('Attempting SMTP auth with username:', authUser)
     
     // Rediffmail SMTP configuration
-    const transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
       host: smtpHost || 'smtp.rediffmail.com',
       port: smtpPort,
       secure: useSecure,
@@ -129,12 +131,40 @@ export async function POST(request) {
       `,
     }
 
-    // Send email
-    await transporter.sendMail(mailOptions)
-
-    return Response.json({ success: true, message: 'Enquiry sent successfully' })
+    // Send email - try with username without @rediffmail.com first
+    try {
+      await transporter.sendMail(mailOptions)
+      return Response.json({ success: true, message: 'Enquiry sent successfully' })
+    } catch (authError) {
+      // If authentication fails and we tried without @rediffmail.com, try with it
+      if (authError.code === 'EAUTH' && smtpUser.includes('@rediffmail.com') && authUser === usernameWithoutDomain) {
+        console.log('Auth failed with username without domain, retrying with full email:', smtpUser)
+        transporter = nodemailer.createTransport({
+          host: smtpHost || 'smtp.rediffmail.com',
+          port: smtpPort,
+          secure: useSecure,
+          auth: {
+            user: smtpUser, // Try with full email
+            pass: smtpPass,
+          },
+          tls: {
+            rejectUnauthorized: false,
+            minVersion: 'TLSv1'
+          },
+          requireTLS: !useSecure,
+          connectionTimeout: 15000,
+          greetingTimeout: 15000,
+          socketTimeout: 15000
+        })
+        await transporter.sendMail(mailOptions)
+        return Response.json({ success: true, message: 'Enquiry sent successfully' })
+      }
+      throw authError
+    }
   } catch (error) {
     console.error('Email sending error:', error)
+    console.error('Auth username used:', authUser)
+    console.error('Original username:', smtpUser)
     
     // Provide more detailed error message in development
     const errorMessage = process.env.NODE_ENV === 'development' 
