@@ -49,13 +49,20 @@ export async function POST(request) {
     const smtpPort = parseInt(process.env.GODADDY_SMTP_PORT || '465')
     const useSecure = smtpPort === 465
     
+    // For free Rediffmail accounts, username should be without @rediffmail.com
+    let authUser = smtpUser
+    if (smtpUser.includes('@rediffmail.com')) {
+      authUser = smtpUser.replace('@rediffmail.com', '')
+      console.log('Trying username without @rediffmail.com:', authUser)
+    }
+    
     // Rediffmail SMTP configuration
     const transporter = nodemailer.createTransport({
       host: smtpHost || 'smtp.rediffmail.com',
       port: smtpPort,
       secure: useSecure,
       auth: {
-        user: smtpUser,
+        user: authUser,
         pass: smtpPass,
       },
       tls: {
@@ -70,7 +77,7 @@ export async function POST(request) {
 
     // Email content
     const mailOptions = {
-      from: smtpUser,
+      from: smtpUser.includes('@') ? smtpUser : `${smtpUser}@rediffmail.com`,
       to: 'mahendrabuilders@rediffmail.com', // or another recipient
       subject: `Contact Form: ${subject}`,
       html: `
