@@ -3,10 +3,13 @@ import nodemailer from 'nodemailer'
 export const runtime = 'nodejs'
 
 export async function POST(request) {
+  let smtpUser = null
+  let authUser = null
+  
   try {
     // Validate environment variables (using old variable names)
     const smtpHost = process.env.GODADDY_SMTP_HOST
-    const smtpUser = process.env.GODADDY_SMTP_USER
+    smtpUser = process.env.GODADDY_SMTP_USER
     const smtpPass = process.env.GODADDY_SMTP_PASS
     
     if (!smtpHost || !smtpUser || !smtpPass) {
@@ -61,7 +64,7 @@ export async function POST(request) {
       ? smtpUser.replace('@rediffmail.com', '') 
       : smtpUser
     
-    let authUser = usernameWithoutDomain
+    authUser = usernameWithoutDomain
     console.log('Attempting SMTP auth with username:', authUser)
     
     // Rediffmail SMTP configuration
@@ -180,8 +183,8 @@ export async function POST(request) {
     }
   } catch (error) {
     console.error('Email sending error:', error)
-    console.error('Auth username used:', authUser)
-    console.error('Original username:', smtpUser)
+    if (authUser) console.error('Auth username used:', authUser)
+    if (smtpUser) console.error('Original username:', smtpUser)
     
     // Provide more detailed error message in development
     const errorMessage = process.env.NODE_ENV === 'development' 
